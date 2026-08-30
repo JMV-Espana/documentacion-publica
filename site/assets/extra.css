@@ -1,0 +1,13 @@
+/* Paleta de marca JMV España, a partir del logo (#188870) + acento dorado (#C9A227) */
+:root {
+  --md-primary-fg-color: #188870;
+  --md-primary-fg-color--light: #1BA187;
+  --md-primary-fg-color--dark: #146F5C;
+  --md-primary-bg-color: #FFFFFF;
+  --md-primary-bg-color--light: #FFFFFFB3;
+
+  --md-accent-fg-color: #C9A227;
+  --md-accent-fg-color--transparent: #C9A2271A;
+  --md-accent-bg-color: #FFFFFF;
+  --md-accent-bg-color--light: #FFFFFFB3;
+}

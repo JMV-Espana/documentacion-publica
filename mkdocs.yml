@@ -6,13 +6,19 @@ repo_name: documentacion-publica
 theme:
   name: material
   language: es
+  logo: assets/logo.svg
+  favicon: assets/favicon.png
   palette:
-    primary: indigo
+    primary: custom
+    accent: custom
   features:
     - navigation.tabs
     - navigation.top
     - search.suggest
     - content.action.edit   # añade un lápiz "Editar esta página" que lleva directo al editor de GitHub
+
+extra_css:
+  - assets/extra.css
 
 plugins:
   - search

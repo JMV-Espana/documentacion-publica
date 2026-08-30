@@ -1,17 +1,10 @@
-# Welcome to MkDocs
+# Inicio
 
-For full documentation visit [mkdocs.org](https://www.mkdocs.org).
+Este sitio web contiene los manuales y documentos oficiales de JMV España, incluyendo estatutos, políticas, procedimientos y guías de uso para los miembros y responsables de la organización.
 
-## Commands
+Navega por las secciones del sitio para encontrar la información que necesitas, o utiliza esta barra de búsqueda:
 
-* `mkdocs new [dir-name]` - Create a new project.
-* `mkdocs serve` - Start the live-reloading docs server.
-* `mkdocs build` - Build the documentation site.
-* `mkdocs -h` - Print help message and exit.
 
-## Project layout
+Para *editar* alguna guía, haz click en el botón que aparece en la esquina superior derecha de cada página. Esto te llevará al repositorio de GitHub donde podrás proponer cambios o mejoras a los documentos.
 
-    mkdocs.yml    # The configuration file.
-    docs/
-        index.md  # The documentation homepage.
-        ...       # Other markdown pages, images and other files.
+También puedes descargar los documentos en formato PDF haciendo click en el botón de descarga que aparece en la parte superior de cada página.

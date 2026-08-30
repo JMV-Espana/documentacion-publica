@@ -14,11 +14,11 @@ Se te pedirá cambiar la contraseña a una nueva inmediatamente.
 > [!success]
 > Siguientes pasos:&#x20;
 >
-> \- Importa tu antigua cuenta de gmail: historial de correos, contactos... y redirigela a la nueva. Encuentra como en esta guía: [Importar la cuenta de Gmail antigua](https://app.nuclino.com/t/b/58f68d86-7daf-4beb-9013-c2b0975b6dbf?n) .
+> \- Importa tu antigua cuenta de gmail: historial de correos, contactos... y redirigela a la nueva. Encuentra como en esta guía: [Importar la cuenta de Gmail antigua](importar-gmail.md) .
 >
 > \- Migra tu antiguo Drive a la nube corporativa: base de datos de centro, documentos oficiales, tesorería, activiades, catequesis...
 >
-> Encuentra como en esta guía: [Migrar tu antigua nube al nuevo Drive](https://app.nuclino.com/t/b/28c7ddc2-3572-4814-ba7f-7967c3164331?n)
+> Encuentra como en esta guía: [Migrar tu antigua nube al nuevo Drive](migrar-nube.md)
 
 > [!warning]
 > Qué hacer cuando cambiamos de presidente
@@ -34,6 +34,6 @@ Se te pedirá cambiar la contraseña a una nueva inmediatamente.
 >
 > Dentro de la estructura de Drive, se puede dar acceso específico a archivos, carpetas o secciones completas a las cuentas personales de Google de quien lo necesite.&#x20;
 >
-> Más info en [Protección de Datos en Google Drive](https://app.nuclino.com/t/b/9e77443d-66c0-4e7f-a499-8b717dd5fb32?n) .
+> Más info en [Protección de Datos en Google Drive](../Corporativo/Políticas/proteccion-datos.md) .
 
 <br>

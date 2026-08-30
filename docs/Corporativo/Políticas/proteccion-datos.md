@@ -16,11 +16,11 @@ Para la gestión de una actividad, o de un servicio de centro, podemos dar acces
 
 Por ejemplo, para compartir la carpeta "Tesorería", simplemente tenemos que seleccionar la opción "Compartir" en el desplegable.
 
-![imagen.png](https://files.nuclino.com/files/6492e811-1274-4626-9e01-5ab823a5dcf4/imagen.png)
+![imagen.png](../../assets/img/proteccion-datos/01.png)
 
 y compartirla con el tesorero de centro
 
-![imagen.png](https://files.nuclino.com/files/359b995c-1917-41d2-b788-64a43f3663c4/imagen.png)
+![imagen.png](../../assets/img/proteccion-datos/02.png)
 
 Además, en esta pestaña, verás una lista actualizada de quien puede acceder a esta carpeta.
 

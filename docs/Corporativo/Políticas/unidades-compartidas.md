@@ -1,13 +1,13 @@
 La novedad en esta cuenta serán las llamadas **Unidades compartidas**:
 
-![cc2fdb94-be32-491d-90c7-ba79559645a0.png](https://files.nuclino.com/files/109461a5-2097-46d2-8522-ca16ea4cb93e/cc2fdb94-be32-491d-90c7-ba79559645a0.png)
+![cc2fdb94-be32-491d-90c7-ba79559645a0.png](../../assets/img/unidades-compartidas/01.png)
 
 Como se puede ver, cada cuenta tendrá acceso a dos unidades compartidas diferentes:
 
 1. JMV España - Pública: En esta unidad compartida tendrán acceso a la información pública de la asociación: logos, lema, calendario, proceso catecumenal, pasos de etapa…
 2. Nombre de centro: Esta unidad compartida será la que se utilizará a partir de ahora para **guardar la información corporativa a la que el Secretariado Nacional debe tener acceso.** De hecho, si seleccionamos esa unidad compartida aparecerán 3 carpetas: 
 
-![f373bba7-2b40-43f8-ac86-762475f80275.png](https://files.nuclino.com/files/cb1e65a3-a330-45ec-9cba-46fbbc88e4ad/f373bba7-2b40-43f8-ac86-762475f80275.png)
+![f373bba7-2b40-43f8-ac86-762475f80275.png](../../assets/img/unidades-compartidas/02.png)
 
 **Carpeta de Secretaría**\
 Aquí tendremos:
