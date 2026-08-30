@@ -188,6 +188,42 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+   Buscador destacado de la página de inicio
+   ---------------------------------------------------------------------------
+   No es un buscador aparte: es un <label> asociado al checkbox #__search que
+   Material ya usa para su propia búsqueda. Al pulsarlo se abre el buscador del
+   tema y se enfoca su campo. Así hay un único motor de búsqueda y un único
+   índice, en vez de duplicarlos.                                             */
+
+.jmv-buscador {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border: 0.1rem solid var(--md-primary-fg-color--dark);
+  border-radius: 0.6rem;
+  color: var(--md-primary-fg-color--dark);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.jmv-buscador:hover {
+  background-color: color-mix(in srgb, var(--md-primary-fg-color--dark) 7%, transparent);
+}
+
+.jmv-buscador__icono {
+  flex: 0 0 auto;
+  width: 1.4em;
+  height: 1.4em;
+  fill: currentcolor;
+}
+
+.jmv-buscador__texto {
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
    Botones de acción de página: "EDITAR" y "DESCARGAR PDF"
    ---------------------------------------------------------------------------
    Por defecto, Material y mkdocs-exporter los pintan como un icono suelto sin
@@ -290,7 +326,9 @@ body {
   /* Se oculta la fila entera, no solo los botones: si el contenedor siguiera
      siendo flex, dejaría su margen inferior como hueco en blanco en el PDF. */
   .jmv-page-actions,
-  .md-content__button.md-icon {
+  .md-content__button.md-icon,
+  /* Un buscador en un PDF impreso no sirve de nada. */
+  .jmv-buscador {
     display: none;
   }
 

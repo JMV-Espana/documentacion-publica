@@ -1,4 +1,6 @@
 nav:
+  # index.md va primero: es la portada de la sección.
+  - index.md
   - estatutos.md
   # Página aún vacía: el título no puede salir de un encabezado, se fija aquí.
   - Estilo de vida: estilo-de-vida.md

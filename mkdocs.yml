@@ -33,6 +33,9 @@ theme:
     # así todas las secciones son desplegables por igual (incluida "Políticas",
     # que al estar anidada quedaría como el único desplegable entre grupos
     # fijos) y solo se abre la sección de la página que se está leyendo.
+    # Hace que el nombre de la sección en el menú sea un enlace a su portada
+    # (el index.md de su carpeta), en vez de limitarse a desplegarla.
+    - navigation.indexes
     - navigation.top
     - search.suggest
     - content.action.edit   # añade un lápiz "Editar esta página" que lleva directo al editor de GitHub
@@ -40,12 +43,18 @@ theme:
 extra_css:
   - assets/extra.css
 
+# Solo lleva el cursor al campo al pulsar el buscador de la portada.
+extra_javascript:
+  - assets/extra.js
+
 # Ver el comentario de cada archivo para el motivo de cada uno.
 hooks:
   # Mueve los botones "EDITAR" / "DESCARGAR PDF" entre el título y el contenido.
   - hooks/mover_botones.py
   # Añade el encabezado con logotipo a los PDF (solo al PDF, no a la web).
   - hooks/encabezado_pdf.py
+  # Lista automáticamente el contenido de cada sección en su portada.
+  - hooks/indice_seccion.py
 
 # Habilita los avisos !!! success / !!! info / !!! warning / !!! danger (y su
 # variante plegable con ??? ). Los colores de cada tipo se sobrescriben en
@@ -54,6 +63,10 @@ markdown_extensions:
   - admonition
   - pymdownx.details
   - pymdownx.superfences
+  # Las dos siguientes habilitan las tarjetas en rejilla de Material
+  # (<div class="grid cards" markdown>), que usa la página de inicio.
+  - attr_list
+  - md_in_html
 
 plugins:
   - search

@@ -1,5 +1,7 @@
 # Orden de lectura recomendado, no alfabético.
 nav:
+  # index.md va primero: es la portada de la sección.
+  - index.md
   - primeros-pasos.md
   - importar-gmail.md
   - redirigir-gmail.md

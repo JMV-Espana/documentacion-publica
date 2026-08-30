@@ -5,7 +5,9 @@
 append_unmatched: true
 
 nav:
-  - index.md
+  # Título explícito: en el menú interesa "Inicio", pero el encabezado de la
+  # página da la bienvenida, así que no coinciden.
+  - Inicio: index.md
   - Corporativo
   - Secretaría
   - Tesorería

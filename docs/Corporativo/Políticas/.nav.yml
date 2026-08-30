@@ -1,4 +1,6 @@
 nav:
+  # index.md va primero: es la portada de la sección.
+  - index.md
   # Las páginas sin encabezado "#" llevan aquí su título explícito.
   - Protección de menores: proteccion-menores.md
   - proteccion-datos.md
