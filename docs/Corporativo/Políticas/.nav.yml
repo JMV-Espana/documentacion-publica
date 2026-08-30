@@ -1,0 +1,7 @@
+nav:
+  # Las páginas sin encabezado "#" llevan aquí su título explícito.
+  - Protección de menores: proteccion-menores.md
+  - proteccion-datos.md
+  - "Unidades compartidas: qué y para qué": unidades-compartidas.md
+  - Uso de cuentas y tarjetas bancarias: uso-tarjetas-cuentas.md
+  - software-libre.md

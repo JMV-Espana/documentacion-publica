@@ -1,0 +1,6 @@
+# Orden de lectura recomendado, no alfabético.
+nav:
+  - primeros-pasos.md
+  - importar-gmail.md
+  - redirigir-gmail.md
+  - migrar-nube.md

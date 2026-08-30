@@ -1,0 +1,13 @@
+# Navegación del sitio (plugin awesome-nav).
+#
+# append_unmatched se hereda en todas las subcarpetas: cualquier página o sección
+# nueva que no aparezca listada aquí se añade sola al final, sin tocar este fichero.
+append_unmatched: true
+
+nav:
+  - index.md
+  - Corporativo
+  - Secretaría
+  - Tesorería
+  - Actividades
+  - Google Workspace

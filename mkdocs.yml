@@ -2,11 +2,14 @@ site_name: JMV España — Documentación
 site_url: https://jmv-espana.github.io/documentacion-publica
 repo_url: https://github.com/JMV-Espana/documentacion-publica
 repo_name: documentacion-publica
+# Sin esto, el lápiz "Editar esta página" apunta a la rama 'master' (el defecto de
+# MkDocs) y da 404, porque la rama de este repo es 'main'.
+edit_uri: edit/main/docs/
 
 theme:
   name: material
   language: es
-  logo: assets/logo.svg
+  logo: assets/logo-header.svg
   favicon: assets/favicon.png
   palette:
     primary: custom
@@ -27,22 +30,12 @@ plugins:
       formats:
         pdf:
           enabled: !ENV [MKDOCS_EXPORTER_PDF_ENABLED, true]
-          buttons:
-            - title: Descargar en PDF
-              icon: material-file-download-outline
-              enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
-              attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
+      # "buttons" es opción de primer nivel del plugin, no va dentro de formats.pdf.
+      buttons:
+        - title: Descargar en PDF
+          icon: material-file-download-outline
+          enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
+          attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
 
-nav:
-  - Inicio: index.md
-  - Corporativo: 
-    - Estatutos: Corporativo/estatutos.md
-    - Estilo de vida: Corporativo/estilo-de-vida.md
-    - Políticas: [...]
-  - Secretaría: [...]
-  - Tesorería: [...]
-  - Actividades: [...]
-  - Google Workspace: [...]
-  - Identidad visual: [...]
-  - Plantillas: [...]
-  - Contacto: contacto.md
+# La navegación NO se define aquí: awesome-nav ignora el "nav" de mkdocs.yml y la
+# construye a partir de los ficheros .nav.yml de cada carpeta de docs/.
