@@ -17,12 +17,21 @@ theme:
 plugins:
   - search
   - awesome-nav
+  - exporter:
+      formats:
+        pdf:
+          enabled: !ENV [MKDOCS_EXPORTER_PDF_ENABLED, true]
+          buttons:
+            - title: Descargar en PDF
+              icon: material-file-download-outline
+              enabled: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.enabled
+              attributes: !!python/name:mkdocs_exporter.formats.pdf.buttons.download.attributes
 
 nav:
   - Inicio: index.md
   - Corporativo: 
-    - Estatutos: estatutos.md
-    - Estilo de vida: estilo-de-vida.md
+    - Estatutos: Corporativo/estatutos.md
+    - Estilo de vida: Corporativo/estilo-de-vida.md
     - Políticas: [...]
   - Secretaría: [...]
   - Tesorería: [...]
