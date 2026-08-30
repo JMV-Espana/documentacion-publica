@@ -72,4 +72,4 @@ construyéndose bien: que no has dejado un enlace roto ni un formato mal cerrado
     Páginas como los **Estatutos** o el **Protocolo de protección de menores**
     tienen un PDF firmado con validez legal, que vive en el Drive de la
     asociación. Puedes corregir el texto de la página, pero **ese PDF no se
-    toca desde aquí**. Si hay que cambiar el documento oficial, comiunícate con el Equipo Coordinador Nacional.
+    toca desde aquí**. Si hay que cambiar el documento oficial, comunícate con el Equipo Coordinador Nacional.
