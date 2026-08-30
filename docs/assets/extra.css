@@ -119,6 +119,75 @@ input {
 }
 
 /* ---------------------------------------------------------------------------
+   Marca de agua del fondo
+   ---------------------------------------------------------------------------
+   El logo, anclado abajo a la derecha y recortado por ambos bordes, para que
+   el fondo no sea un blanco liso.
+
+   Va como background-image del body y no como pseudo-elemento a propósito: un
+   ::before obligaría a pelearse con el apilamiento, porque con z-index 0 se
+   pintaría por encima del texto y con -1 quedaría detrás del fondo blanco del
+   propio body, invisible. Un background se pinta detrás del contenido sin
+   necesidad de tocar z-index.
+
+   Por eso el SVG (logo-marca-agua.svg) ya viene teñido: a una imagen de fondo no
+   se le puede aplicar opacity. Es el mismo trazado que logo.svg con el verde de
+   marca rebajado al 8% sobre blanco (#EDF6F4). Para hacerla más o menos visible,
+   basta con cambiar ese relleno en el SVG.
+
+   attachment:fixed la deja quieta al hacer scroll, como un papel timbrado.    */
+body {
+  background-image: url("logo-marca-agua.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Desplazamientos negativos: así el logo se sale por abajo y por la derecha
+     en vez de verse entero flotando en una esquina. */
+  background-position: right -7rem bottom -7rem;
+  background-size: 30rem auto;
+}
+
+/* En pantallas estrechas hay que encogerla: a 30rem sobre un móvil de 390px la
+   marca ocupa casi toda la pantalla y deja de ser un fondo discreto. */
+@media screen and (max-width: 59.9375em) {
+  body {
+    background-position: right -3.5rem bottom -3.5rem;
+    background-size: 15rem auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Logotipo de la cabecera
+   ---------------------------------------------------------------------------
+   Material no fija la altura de la cabecera ni la expone como variable: sale
+   del propio contenido. El logo mide 1.2rem más 0.4rem de padding y 0.2rem de
+   margen por lado, lo que da los 2.4rem de alto de la barra. Al subir el logo a
+   1.8rem (un 50% más), la cabecera pasa sola a 3rem.                         */
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.8rem;
+}
+
+/* Las barras laterales se pegan con position:sticky a top:2.4rem, la altura
+   antigua de la cabecera; sin actualizarlo se meten 0.6rem por debajo de ella
+   al hacer scroll.
+
+   El ajuste va acotado a 76.25em (1220px) por dos motivos, y ambos importan:
+   - Material solo muestra el logo a partir de ese ancho (debajo lo sustituye por
+     el botón de menú), así que la cabecera únicamente mide 3rem por encima de
+     él; debajo sigue midiendo 2.4rem y el valor del tema es el correcto.
+   - Debajo de ese ancho la barra primaria no es una barra sino el cajón
+     desplegable, con position:fixed, top:0 y height:100%. Aplicarle este top la
+     bajaría 0.6rem sin recortarle el alto, dejando el final del menú fuera de
+     la pantalla. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary,
+  .md-sidebar--secondary {
+    top: 3rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
    Botones de acción de página: "EDITAR" y "DESCARGAR PDF"
    ---------------------------------------------------------------------------
    Por defecto, Material y mkdocs-exporter los pintan como un icono suelto sin
@@ -223,5 +292,11 @@ input {
   .jmv-page-actions,
   .md-content__button.md-icon {
     display: none;
+  }
+
+  /* La marca de agua es background-attachment:fixed, así que al imprimir se
+     repetiría en todas y cada una de las páginas del PDF. */
+  body {
+    background-image: none;
   }
 }
