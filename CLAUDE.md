@@ -359,6 +359,7 @@ Para las páginas que representan un documento oficial firmado, sobrescribid el 
 
 ```markdown
 ---
+pdf: false
 buttons:
   - title: Descargar el documento oficial (PDF)
     icon: material-file-download-outline
@@ -374,6 +375,8 @@ Este documento es un resumen de referencia. El documento firmado y con validez l
 ```
 
 El `ID_DEL_ARCHIVO_EN_DRIVE` es la cadena larga que aparece en la URL para compartir el archivo en Drive (`.../d/ID/view`). El archivo debe estar compartido como "Cualquier persona con el enlace" (o, si preferís, restringido a vuestro dominio de Workspace) para que la descarga funcione sin pedir permiso.
+
+La línea `pdf: false` es imprescindible y fácil de olvidar: el `buttons` del *front matter* **se suma** a los botones globales del plugin, no los sustituye, así que sin ella la página acaba con **dos** iconos de descarga (el PDF oficial de Drive y otro generado automáticamente a partir del texto) — justo la confusión que la sección 10 quiere evitar. Al poner `pdf: false`, el plugin no genera PDF para esa página y su botón automático desaparece solo, porque solo se muestra cuando la página tiene PDF generado. De paso, ahorra abrir un Chrome para renderizar un PDF que nadie debe usar.
 
 Esto solo cambia el botón de PDF; el lápiz de "Editar esta página" sigue funcionando igual y sigue siendo útil para corregir la introducción o el texto de esa página — no toca el documento firmado, que sigue viviendo solo en Drive. Si queréis un control extra sobre quién puede tocar estas páginas concretas, se puede añadir un archivo `CODEOWNERS` que obligue a que cualquier Pull Request sobre `estatutos.md` o `protocolo-proteccion-menores.md` la revise sí o sí alguien de `webmaster`, aunque el flujo normal de revisión de la sección 9 ya cubre razonablemente ese caso.
 
