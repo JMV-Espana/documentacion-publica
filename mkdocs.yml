@@ -36,6 +36,11 @@ theme:
 extra_css:
   - assets/extra.css
 
+# Mueve los botones "EDITAR" / "DESCARGAR PDF" para que queden entre el título y
+# el contenido. Ver el comentario del propio archivo para el motivo.
+hooks:
+  - hooks/mover_botones.py
+
 # Habilita los avisos !!! success / !!! info / !!! warning / !!! danger (y su
 # variante plegable con ??? ). Los colores de cada tipo se sobrescriben en
 # extra.css para que sigan la paleta de marca en vez de los tonos por defecto.

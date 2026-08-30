@@ -190,18 +190,37 @@ input {
   content: "DESCARGAR PDF";
 }
 
-/* En pantallas estrechas dejan de flotar y pasan a una fila propia encima del
-   título: flotando roban tanto ancho que el encabezado se parte a mitad de
-   palabra ("Estatuto / s de la asociación"). */
-@media screen and (max-width: 44.9375em) {
-  .md-content__button.md-icon {
-    float: none;
-    margin: 0 0.4rem 0.8rem 0;
-  }
+/* Fila de botones entre el título y el contenido, alineada a la izquierda.
+   El contenedor lo crea el hook hooks/mover_botones.py al construir el sitio;
+   aquí solo se le da forma. Se anula el float:right que Material aplica a los
+   botones, porque dentro de esta fila el orden lo lleva el flex. */
+.jmv-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /* Arriba: el <h1> aporta 40px de margen inferior, así que se recorta con
+     -1.2rem (24px) para dejar el hueco en 16px.
+     Abajo: 0.75rem = 15px. */
+  margin: -1.2rem 0 0.75rem;
+}
+
+/* El margen superior del bloque siguiente colapsaría con el inferior de la fila
+   y ganaría el mayor de los dos (20px en los avisos, 16px en los párrafos),
+   ignorando el valor de arriba. Anulándolo, el hueco lo fija solo la fila. */
+.md-typeset .jmv-page-actions + * {
+  margin-top: 0;
+}
+
+.jmv-page-actions .md-content__button.md-icon {
+  float: none;
+  margin: 0;
 }
 
 /* Los botones no tienen sentido dentro del PDF generado ni al imprimir. */
 @media print {
+  /* Se oculta la fila entera, no solo los botones: si el contenedor siguiera
+     siendo flex, dejaría su margen inferior como hueco en blanco en el PDF. */
+  .jmv-page-actions,
   .md-content__button.md-icon {
     display: none;
   }
