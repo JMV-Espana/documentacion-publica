@@ -1,8 +1,8 @@
 # Redirige tu antiguo email de centro
-> [!danger]
-> Es mucho más efectivo importar la cuenta de Gmail completa, con todo el historial, contactos y nuevos correos. Sigue las instrucciones para hacerlo aquí: [Importar la cuenta de Gmail antigua](importar-gmail.md)
->
-> Utiliza esta guía solamente si no has podido hacer la importación o quieres seguir recibiendo emails de tu antigua cuenta pasados 30 días desde la importación.
+!!! danger "Importante"
+    Es mucho más efectivo importar la cuenta de Gmail completa, con todo el historial, contactos y nuevos correos. Sigue las instrucciones para hacerlo aquí: [Importar la cuenta de Gmail antigua](importar-gmail.md)
+
+    Utiliza esta guía solamente si no has podido hacer la importación o quieres seguir recibiendo emails de tu antigua cuenta pasados 30 días desde la importación.
 
 Muchas familias, empresas con las que contratamos servicios, antiguos socios... tienen nuestros emails de centro.
 
@@ -27,12 +27,12 @@ Aquí tienes los pasos para hacerlo desde una cuenta de Gmail personal (no insti
 7. Regresa a la pestaña de configuración en tu **Gmail personal**, actualiza el navegador y selecciona la opción **Reenviar una copia del correo entrante a...**.
 
    ![imagen.png](../assets/img/redirigir-gmail/05.png)
-8. Elige qué quieres hacer con el correo original. Te recomendamos "archivar la copia de Gmail".&#x20;
+8. Elige qué quieres hacer con el correo original. Te recomendamos "archivar la copia de Gmail".
 9. Haz clic en **Guardar los cambios** al final de la página (tendrás que hacer scroll hacia abajo)
 
    ![Screenshot 2026-08-27 at 17.42.33.png](../assets/img/redirigir-gmail/06.png)
 
-> [!info]
-> Te recomendamos que también migres tu bandeja de entrada. Para ello, mira la guía [Importar la cuenta de Gmail antigua](importar-gmail.md)
+!!! info "Información"
+    Te recomendamos que también migres tu bandeja de entrada. Para ello, mira la guía [Importar la cuenta de Gmail antigua](importar-gmail.md)
 
 <br>

@@ -26,13 +26,12 @@ Además, en esta pestaña, verás una lista actualizada de quien puede acceder a
 
 Debemos procurar mantener este listado actualizado.
 
-> [!warning]
-> Opción "Copiar enlace"
->
-> El acceso se puede compartir también mediante enlace, pero las carpetas de la Unidad Compartida pedirán permiso a la cuenta de centro antes de concederlo.
->
-> Debemos aceptar una a una a las personas que entren a la carpeta.
->
-> En "Mi Unidad" esta opción se puede desactivar, pero solo debemos hacerlo con documentos realmente públicos: una circular para las familias, un cartel, etc.
+!!! warning "Opción “Copiar enlace”"
+
+    El acceso se puede compartir también mediante enlace, pero las carpetas de la Unidad Compartida pedirán permiso a la cuenta de centro antes de concederlo.
+
+    Debemos aceptar una a una a las personas que entren a la carpeta.
+
+    En "Mi Unidad" esta opción se puede desactivar, pero solo debemos hacerlo con documentos realmente públicos: una circular para las familias, un cartel, etc.
 
 <br>

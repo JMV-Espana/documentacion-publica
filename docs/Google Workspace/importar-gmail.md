@@ -1,6 +1,6 @@
 # Importa tu antigua cuenta de Gmail
-> [!danger]
-> Si este proceso no funciona, también puedes simplemente redirigir los correos electrónicos nuevos. Aquí tienes la guía paso a paso: [Redirigir tu antiguo email de centro](redirigir-gmail.md)
+!!! danger "Importante"
+    Si este proceso no funciona, también puedes simplemente redirigir los correos electrónicos nuevos. Aquí tienes la guía paso a paso: [Redirigir tu antiguo email de centro](redirigir-gmail.md)
 
 Es posible que quieras conservar tu historial de correo de centro. ¡Aquí te explicamos como migrarlo a las nuevas cuentas!
 
@@ -40,7 +40,7 @@ Es posible que quieras conservar tu historial de correo de centro. ¡Aquí te ex
 2. Haz clic en **Comenzar importación**.
 3. Verás un mensaje indicando que el proceso ha comenzado. Haz clic en **Aceptar**.
 
-> [!warning]
-> Si además quieres asegurarte de que te llega todo el correo más allá de 30 días, redirige el email antiguo al nuevo. Aquí tienes la guía paso a paso: [Redirigir tu antiguo email de centro](redirigir-gmail.md)
+!!! warning "Advertencia"
+    Si además quieres asegurarte de que te llega todo el correo más allá de 30 días, redirige el email antiguo al nuevo. Aquí tienes la guía paso a paso: [Redirigir tu antiguo email de centro](redirigir-gmail.md)
 
 <br>

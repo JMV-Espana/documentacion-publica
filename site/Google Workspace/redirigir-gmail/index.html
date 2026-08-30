@@ -11,9 +11,6 @@
 <title>Redirige tu antiguo email de centro - JMV España — Documentación</title>
 <link href="../../assets/stylesheets/main.ec1eaa64.min.css" rel="stylesheet"/>
 <link href="../../assets/stylesheets/palette.ab4e12ef.min.css" rel="stylesheet"/>
-<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&amp;display=fallback" rel="stylesheet"/>
-<style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
 <link href="../../assets/extra.css" rel="stylesheet"/>
 <script>__md_scope=new URL("../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
 </head>
@@ -532,16 +529,16 @@
 </div>
 </div>
 <div class="md-content" data-md-component="content">
-<article class="md-content__inner md-typeset">
+<article class="md-content__inner md-typeset"><a class="md-content__button md-icon" download="Redirige tu antiguo email de centro.pdf" href="../../Google Workspace/redirigir-gmail/index.pdf" title="Descargar en PDF"><html><body><svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="m14 2 6 6v12a2 2 0 0 1-2 2H6a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2zm4 18V9h-5V4H6v16zm-6-1-4-4h2.5v-3h3v3H16z"></path></svg></body></html></a>
 <a class="md-content__button md-icon" href="https://github.com/JMV-Espana/documentacion-publica/edit/main/docs/Google Workspace/redirigir-gmail.md" rel="edit" title="Editar esta página">
 <svg viewbox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M10 20H6V4h7v5h5v3.1l2-2V8l-6-6H6c-1.1 0-2 .9-2 2v16c0 1.1.9 2 2 2h4zm10.2-7c.1 0 .3.1.4.2l1.3 1.3c.2.2.2.6 0 .8l-1 1-2.1-2.1 1-1c.1-.1.2-.2.4-.2m0 3.9L14.1 23H12v-2.1l6.1-6.1z"></path></svg>
 </a>
 <h1 id="redirige-tu-antiguo-email-de-centro">Redirige tu antiguo email de centro</h1>
-<blockquote>
-<p>[!danger]
-Es mucho más efectivo importar la cuenta de Gmail completa, con todo el historial, contactos y nuevos correos. Sigue las instrucciones para hacerlo aquí: <a href="../importar-gmail/">Importar la cuenta de Gmail antigua</a></p>
+<div class="admonition danger">
+<p class="admonition-title">Importante</p>
+<p>Es mucho más efectivo importar la cuenta de Gmail completa, con todo el historial, contactos y nuevos correos. Sigue las instrucciones para hacerlo aquí: <a href="../importar-gmail/">Importar la cuenta de Gmail antigua</a></p>
 <p>Utiliza esta guía solamente si no has podido hacer la importación o quieres seguir recibiendo emails de tu antigua cuenta pasados 30 días desde la importación.</p>
-</blockquote>
+</div>
 <p>Muchas familias, empresas con las que contratamos servicios, antiguos socios... tienen nuestros emails de centro.</p>
 <p>Para que no tengan ningún problema al contactarnos, debemos redirigir esos emails a nuestro nuevo correo de centro jmvesp.org.</p>
 <p>Aquí tienes los pasos para hacerlo desde una cuenta de Gmail personal (no institucional).</p>
@@ -559,13 +556,13 @@ Es mucho más efectivo importar la cuenta de Gmail completa, con todo el histori
 6. Ve a la bandeja de entrada de tu <strong>correo corporativo</strong> y busca el mensaje de confirmación de Google. Haz clic en el <strong>vínculo de verificación</strong> que contiene ese correo.
 7. Regresa a la pestaña de configuración en tu <strong>Gmail personal</strong>, actualiza el navegador y selecciona la opción <strong>Reenviar una copia del correo entrante a...</strong>.</p>
 <p><img alt="imagen.png" src="../../assets/img/redirigir-gmail/05.png"/>
-8. Elige qué quieres hacer con el correo original. Te recomendamos "archivar la copia de Gmail". 
+8. Elige qué quieres hacer con el correo original. Te recomendamos "archivar la copia de Gmail".
 9. Haz clic en <strong>Guardar los cambios</strong> al final de la página (tendrás que hacer scroll hacia abajo)</p>
 <p><img alt="Screenshot 2026-08-27 at 17.42.33.png" src="../../assets/img/redirigir-gmail/06.png"/></p>
-<blockquote>
-<p>[!info]
-Te recomendamos que también migres tu bandeja de entrada. Para ello, mira la guía <a href="../importar-gmail/">Importar la cuenta de Gmail antigua</a></p>
-</blockquote>
+<div class="admonition info">
+<p class="admonition-title">Información</p>
+<p>Te recomendamos que también migres tu bandeja de entrada. Para ello, mira la guía <a href="../importar-gmail/">Importar la cuenta de Gmail antigua</a></p>
+</div>
 <p><br/></p>
 </article>
 </div>
@@ -579,10 +576,18 @@ Te recomendamos que también migres tu bandeja de entrada. Para ello, mira la gu
 <footer class="md-footer">
 <div class="md-footer-meta md-typeset">
 <div class="md-footer-meta__inner md-grid">
+<!--
+  Igual que el partials/copyright.html original del tema, pero con "Made with"
+  traducido a "Hecho con" — Material no traduce esa cadena automáticamente ni
+  con language: es, porque no pasa por su sistema de traducciones.
+-->
 <div class="md-copyright">
+<div class="md-copyright__highlight">
+      © 2026 JMV España · <a href="https://www.jmvesp.org/" rel="noopener" target="_blank">jmvesp.org</a>
+</div>
   
   
-    Made with
+    Hecho con
     <a href="https://squidfunk.github.io/mkdocs-material/" rel="noopener" target="_blank">
       Material for MkDocs
     </a>

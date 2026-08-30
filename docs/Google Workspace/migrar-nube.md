@@ -1,8 +1,8 @@
 # Migra tu antigua nube al nuevo Drive
-> [!danger]
-> En el nuevo Drive, almacenaremos datos sensibles en una unidad aparte.&#x20;
->
-> Por favor, consulta la política de Unidades Compartidas: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
+!!! danger "Importante"
+    En el nuevo Drive, almacenaremos datos sensibles en una unidad aparte.
+
+    Por favor, consulta la política de Unidades Compartidas: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
 
 1. Crea una carpeta en tu antiguo Drive con el nombre “Archivos antiguos”.
 
@@ -35,14 +35,12 @@
 
 <br>
 
-> [!info]
-> OPCIONAL.&#x20;
->
-> En la carpeta de “Compartido conmigo” en el Drive de vuestra cuenta original, podéis tener ficheros que os interese descargaros para guardarlos. Añadirlos a la carpeta descargada antes de subir esta carpeta a la nueva cuenta corporativa.
+!!! info "Opcional"
 
-> [!warning]
-> Consulta la política de uso sobre "Mi Unidad" y las UNIDADES COMPARTIDAS
->
-> Toda la info aquí: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
+    En la carpeta de “Compartido conmigo” en el Drive de vuestra cuenta original, podéis tener ficheros que os interese descargaros para guardarlos. Añadirlos a la carpeta descargada antes de subir esta carpeta a la nueva cuenta corporativa.
+
+!!! warning "Consulta la política sobre “Mi Unidad” y las Unidades Compartidas"
+
+    Toda la info aquí: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
 
 <br>

@@ -6,11 +6,24 @@ repo_name: documentacion-publica
 # MkDocs) y da 404, porque la rama de este repo es 'main'.
 edit_uri: edit/main/docs/
 
+# MkDocs no interpola plantillas en mkdocs.yml, así que el año no se calcula solo:
+# actualizad "2026" a mano cada enero. La web es provisional (docs.jmvespana.org
+# la sustituirá cuando esté lista — ver sección 6 de CLAUDE.md).
+copyright: >-
+  &copy; 2026 JMV España ·
+  <a href="https://www.jmvesp.org/" target="_blank" rel="noopener">jmvesp.org</a>
+
 theme:
   name: material
   language: es
+  # overrides/partials/copyright.html traduce "Made with" a "Hecho con": Material
+  # no lo traduce solo aunque language sea "es".
+  custom_dir: overrides
   logo: assets/logo-header.svg
   favicon: assets/favicon.png
+  # false desactiva la carga automática de Google Fonts (Roboto): la tipografía
+  # se fija a mano en extra.css con Helvetica Neue.
+  font: false
   palette:
     primary: custom
     accent: custom
@@ -22,6 +35,14 @@ theme:
 
 extra_css:
   - assets/extra.css
+
+# Habilita los avisos !!! success / !!! info / !!! warning / !!! danger (y su
+# variante plegable con ??? ). Los colores de cada tipo se sobrescriben en
+# extra.css para que sigan la paleta de marca en vez de los tonos por defecto.
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+  - pymdownx.superfences
 
 plugins:
   - search
