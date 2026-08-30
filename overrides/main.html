@@ -1,0 +1,85 @@
+{% extends "base.html" %}
+
+{#
+  Añade al final de cada guía el bloque "¿Alguna duda? ¡Pregúntanos!".
+
+  Se hace sobrescribiendo el bloque "content" (que está dentro del <article>) en
+  vez de con un hook, porque aquí el marcado es el mismo en todas las páginas y
+  Jinja ya tiene a mano el título para el asunto del correo.
+
+  Se omite en las portadas (index.md): la del sitio y las de sección son páginas
+  de navegación, no guías, y la portada ya ofrece su propia vía de contacto.
+#}
+{% block content %}
+  {{ super() }}
+
+  {% if page and page.file.name != "index" %}
+    <section class="jmv-dudas">
+      <button class="jmv-dudas__boton" type="button"
+              data-titulo="{{ page.title }}"
+              onclick="document.getElementById('jmv-dialogo-dudas').showModal()">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M10 19h3v3h-3zm2-17c5.35.22 7.68 5.62 4.5 9.67-.83 1-2.17 1.66-2.83 2.5C13 15 13 16 13 17h-3c0-1.67 0-3.08.67-4.08.66-1 2-1.59 2.83-2.25C15.92 8.43 15.32 5.26 12 5a3 3 0 0 0-3 3H6a6 6 0 0 1 6-6"/></svg>
+        <span>¿ALGUNA DUDA? ¡PREGÚNTANOS!</span>
+      </button>
+    </section>
+
+    <dialog class="jmv-dialogo" id="jmv-dialogo-dudas" aria-labelledby="jmv-dialogo-titulo">
+      <form class="jmv-dialogo__form" method="dialog">
+        <h2 class="jmv-dialogo__titulo" id="jmv-dialogo-titulo">¿Alguna duda?</h2>
+        <p class="jmv-dialogo__intro">
+          Rellena esto y se abrirá tu programa de correo con el mensaje ya
+          preparado. Solo tendrás que darle a enviar.
+        </p>
+
+        <fieldset class="jmv-dialogo__grupo">
+          <legend>¿Sobre qué es tu duda?</legend>
+
+          <label class="jmv-dialogo__opcion">
+            <input type="radio" name="jmv-destino" value="gestiones.grupo@jmvesp.org" checked>
+            <span>
+              <strong>Es una duda técnica</strong>
+              <small>El correo, el Drive, esta web… Escribe al Grupo de Gestiones.</small>
+            </span>
+          </label>
+
+          <label class="jmv-dialogo__opcion">
+            <input type="radio" name="jmv-destino" value="ecn@jmvesp.org">
+            <span>
+              <strong>Es una duda para el ECN</strong>
+              <small>Socios, actividades, cuentas… Escribe al Equipo Coordinador Nacional.</small>
+            </span>
+          </label>
+        </fieldset>
+
+        <label class="jmv-dialogo__campo">
+          <span>Tu correo electrónico</span>
+          <input type="email" id="jmv-remitente" placeholder="nombre@jmvesp.org" required>
+        </label>
+
+        <label class="jmv-dialogo__campo">
+          <span>Asunto</span>
+          <input type="text" id="jmv-asunto" value="Duda sobre {{ page.title }}">
+        </label>
+
+        <label class="jmv-dialogo__campo">
+          <span>Tu duda</span>
+          <textarea id="jmv-mensaje" rows="5" placeholder="Cuéntanos qué necesitas saber…"></textarea>
+        </label>
+
+        <p class="jmv-dialogo__aviso">
+          Si al pulsar no se abre nada, es que este dispositivo no tiene un
+          programa de correo configurado. En ese caso escribe directamente a
+          <strong class="jmv-dialogo__destino">gestiones.grupo@jmvesp.org</strong>.
+        </p>
+
+        <div class="jmv-dialogo__acciones">
+          {# type="button": como submit dispararía la validación del correo
+             obligatorio y no dejaría cerrar sin rellenarlo. #}
+          <button class="jmv-dialogo__cancelar" type="button"
+                  onclick="this.closest('dialog').close()">Cancelar</button>
+          <button class="jmv-dialogo__enviar" type="button" id="jmv-enviar">Abrir mi correo</button>
+        </div>
+      </form>
+    </dialog>
+  {% endif %}
+{% endblock %}

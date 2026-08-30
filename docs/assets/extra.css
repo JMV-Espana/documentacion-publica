@@ -224,6 +224,183 @@ body {
 }
 
 /* ---------------------------------------------------------------------------
+   Bloque "¿Alguna duda?" del final de cada guía
+   ---------------------------------------------------------------------------
+   El marcado lo pone overrides/main.html. El botón imita a los de la cabecera
+   de la página (mismo verde, mismo radio, etiqueta en mayúsculas) para que se
+   lea como parte del mismo sistema.                                          */
+
+.jmv-dudas {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.2rem;
+  border-top: 0.05rem solid var(--md-default-fg-color--lightest);
+  text-align: center;
+}
+
+.jmv-dudas__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.55em 1em;
+  border: 1px solid var(--md-primary-fg-color--dark);
+  border-radius: 0.5rem;
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.jmv-dudas__boton:hover {
+  background-color: var(--md-primary-fg-color);
+}
+
+.jmv-dudas__boton svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentcolor;
+  flex: 0 0 auto;
+}
+
+/* --- El diálogo --- */
+
+.jmv-dialogo {
+  width: min(32rem, calc(100vw - 1.6rem));
+  padding: 0;
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.4rem 1.6rem #0000004d;
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+}
+
+.jmv-dialogo::backdrop {
+  background-color: #00000066;
+}
+
+.jmv-dialogo__form {
+  padding: 1.2rem;
+}
+
+.jmv-dialogo__titulo {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color--dark);
+}
+
+.jmv-dialogo__intro {
+  margin: 0 0 1rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.jmv-dialogo__grupo {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+.jmv-dialogo__grupo legend {
+  padding: 0;
+  margin-bottom: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.jmv-dialogo__opcion {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+  padding: 0.5rem;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.jmv-dialogo__opcion:hover {
+  border-color: var(--md-primary-fg-color--dark);
+}
+
+.jmv-dialogo__opcion small {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__campo {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.jmv-dialogo__campo input,
+.jmv-dialogo__campo textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.55rem;
+  border: 0.05rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: inherit;
+  background-color: var(--md-default-bg-color);
+}
+
+.jmv-dialogo__campo input:focus,
+.jmv-dialogo__campo textarea:focus {
+  outline: 0.1rem solid var(--md-primary-fg-color--dark);
+  border-color: transparent;
+}
+
+.jmv-dialogo__aviso {
+  margin: 0 0 1rem;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__acciones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.jmv-dialogo__cancelar,
+.jmv-dialogo__enviar {
+  padding: 0.5em 0.9em;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.jmv-dialogo__cancelar {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background-color: transparent;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__enviar {
+  border: 1px solid var(--md-primary-fg-color--dark);
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+}
+
+.jmv-dialogo__enviar:hover {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* ---------------------------------------------------------------------------
    Botones de acción de página: "EDITAR" y "DESCARGAR PDF"
    ---------------------------------------------------------------------------
    Por defecto, Material y mkdocs-exporter los pintan como un icono suelto sin
@@ -327,8 +504,10 @@ body {
      siendo flex, dejaría su margen inferior como hueco en blanco en el PDF. */
   .jmv-page-actions,
   .md-content__button.md-icon,
-  /* Un buscador en un PDF impreso no sirve de nada. */
-  .jmv-buscador {
+  /* Un buscador y un formulario en papel no sirven de nada. */
+  .jmv-buscador,
+  .jmv-dudas,
+  .jmv-dialogo {
     display: none;
   }
 
