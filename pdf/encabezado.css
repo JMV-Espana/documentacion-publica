@@ -1,0 +1,90 @@
+/* Estilos que solo se aplican al generar los PDF (no se publican en la web).
+   Se cargan desde mkdocs.yml, en plugins > exporter > formats > pdf > stylesheets.
+
+   El encabezado lo inyecta hooks/encabezado_pdf.py dentro del artículo.
+   position:running() lo saca del flujo del documento y lo coloca en el margen
+   superior de CADA página; es CSS Paged Media, que funciona aquí porque
+   mkdocs-exporter carga Paged.js antes de imprimir. El margen superior de @page
+   tiene que reservarle sitio a mano: si no, el encabezado se solapa con el
+   texto. */
+
+/* El logo va flotado y no con flexbox: Paged.js reubica este elemento dentro de
+   la caja de margen de la página y en ese proceso el display:flex se pierde,
+   dejando el logo apilado encima del texto en vez de al lado. El float sobrevive
+   a ese traslado. */
+.jmv-pdf-cabecera {
+  position: running(cabecera);
+  width: 100%;
+  padding-bottom: 2.5mm;
+  border-bottom: 0.4mm solid #146f5c;
+  overflow: hidden; /* contiene el float para que el filete quede debajo de todo */
+}
+
+.jmv-pdf-logo {
+  float: left;
+  height: 12mm;
+  width: auto;
+  margin-right: 4.5mm;
+}
+
+.jmv-pdf-fecha {
+  float: right;
+  margin: 0;
+  padding-top: 1.5mm;
+  font-size: 7.5pt;
+  color: #6b6b6b;
+  white-space: nowrap;
+}
+
+/* overflow crea un contexto de formato que evita que las líneas se metan por
+   debajo del logo o de la fecha. */
+.jmv-pdf-textos {
+  overflow: hidden;
+  padding-top: 1mm;
+}
+
+.jmv-pdf-grupo,
+.jmv-pdf-titulo {
+  margin: 0;
+  line-height: 1.25;
+}
+
+.jmv-pdf-grupo {
+  font-size: 8pt;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #146f5c;
+}
+
+.jmv-pdf-titulo {
+  font-size: 11pt;
+  font-weight: 700;
+  color: #333333;
+}
+
+@page {
+  /* Sin esto, Chrome usa su tamaño por defecto (carta, 216x279mm), que obliga a
+     reescalar al imprimir en Europa. El renderizador imprime con
+     prefer_css_page_size, así que respeta este valor. */
+  size: A4;
+
+  /* Hueco para el encabezado. Va holgado a propósito: el margen se reserva
+     igual en todas las páginas, y quedarse corto haría que el encabezado pisara
+     la primera línea de texto. */
+  margin-top: 34mm;
+  /* Hueco equivalente abajo para la numeración. */
+  margin-bottom: 20mm;
+
+  @top-left {
+    content: element(cabecera);
+    width: 100%;
+  }
+
+  /* counter(page) y counter(pages) los resuelve Paged.js al paginar. */
+  @bottom-center {
+    content: "Página " counter(page) " de " counter(pages);
+    font-size: 8pt;
+    color: #6b6b6b;
+  }
+}

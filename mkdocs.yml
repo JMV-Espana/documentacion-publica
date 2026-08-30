@@ -40,10 +40,12 @@ theme:
 extra_css:
   - assets/extra.css
 
-# Mueve los botones "EDITAR" / "DESCARGAR PDF" para que queden entre el título y
-# el contenido. Ver el comentario del propio archivo para el motivo.
+# Ver el comentario de cada archivo para el motivo de cada uno.
 hooks:
+  # Mueve los botones "EDITAR" / "DESCARGAR PDF" entre el título y el contenido.
   - hooks/mover_botones.py
+  # Añade el encabezado con logotipo a los PDF (solo al PDF, no a la web).
+  - hooks/encabezado_pdf.py
 
 # Habilita los avisos !!! success / !!! info / !!! warning / !!! danger (y su
 # variante plegable con ??? ). Los colores de cada tipo se sobrescriben en
@@ -60,6 +62,10 @@ plugins:
       formats:
         pdf:
           enabled: !ENV [MKDOCS_EXPORTER_PDF_ENABLED, true]
+          # Estilos que solo se aplican al imprimir el PDF; dan forma al
+          # encabezado que inyecta hooks/encabezado_pdf.py.
+          stylesheets:
+            - pdf/encabezado.css
       # "buttons" es opción de primer nivel del plugin, no va dentro de formats.pdf.
       buttons:
         - title: Descargar en PDF
