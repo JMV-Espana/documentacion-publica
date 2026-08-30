@@ -1,0 +1,55 @@
+site_name: JMV España — Documentación
+site_url: https://docs.jmvesp.org
+repo_url: https://github.com/JMV-Espana/documentacion-publica
+repo_name: documentacion-publica
+
+theme:
+  name: material
+  language: es
+  palette:
+    primary: indigo
+  features:
+    - navigation.tabs
+    - navigation.top
+    - search.suggest
+    - content.action.edit   # añade un lápiz "Editar esta página" que lleva directo al editor de GitHub
+
+plugins:
+  - search
+
+nav:
+  - Inicio: index.md
+  - Corporativo: 
+    - Estatutos: estatutos.md
+    - Estilo de vida: estilo-de-vida.md
+    - Políticas: 
+      - Protección de datos: politica-proteccion-datos.md
+      - Software libre: politica-software-libre.md
+      - Protección de menores: politica-proteccion-menores.md
+      - Tarjetas y Cuentas bancarias: politica-tarjetas-cuentas.md
+      - Unidades Compartidas de Google: politica-unidades-compartidas.md
+  - Secretaría:
+    - Altas: altas.md
+    - Asamblea Local: asamblea-local.md
+    - Programación Anual: programacion-anual.md
+    - Memoria de Actividades: memoria-actividades.md
+  - Tesorería:
+    - Libro de cuentas: libro-cuentas.md
+    - Presupuesto: presupuesto.md
+    - Memoria económica: memoria-economica.md
+    - Facturas: facturas.md
+    - Solicitud de Cuenta y Tarjeta: solicitud-cuenta-tarjeta.md
+  - Actividades:
+    - Actividad de Centro: actividad-centro.md
+    - Actividad entre centros: actividad-entre-centros.md
+    - Actividad de Área: actividad-area.md
+    - Actividades Nacionales: actividades-nacionales.md
+    - Contabilidad de una actividad: contabilidad-actividad.md
+  - Google Workspace:
+    - Primeros pasos: primeros-pasos.md
+    - Migrar la nube: migrar-nube.md
+    - Importar gmail: importar-gmail.md
+    - Redirigir correo: redirigir-correo.md
+  - Identidad visual: identidad.md
+  - Plantillas: plantillas.md
+  - Contacto: contacto.md
