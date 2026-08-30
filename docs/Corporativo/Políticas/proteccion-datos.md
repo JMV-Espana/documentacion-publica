@@ -10,7 +10,7 @@ Es por ello que la unidad donde se alojan (la Unidad Compartida con el nombre de
 
 La carpeta “Mi Unidad”, sin embargo, no goza de esta protección, aunque se puede establecer manualmente para cada archivo/carpeta.  Los archivos y carpetas en esta unidad sí se puede compartir mediante enlaces de acceso universal, sin necesidad de autorizar uno a uno a quienes entran. Por ejemplo, podemos alojar aquí un .pdf con una circular para todas las familias del centro, imágenes promocionales, etc.
 
-# Dar acceso a una carpeta de la Unidad Compartida
+## Dar acceso a una carpeta de la Unidad Compartida
 
 Para la gestión de una actividad, o de un servicio de centro, podemos dar acceso a toda una sección de la Unidad Compartida o de "Mi Unidad" a una persona con cuenta de Google.
 

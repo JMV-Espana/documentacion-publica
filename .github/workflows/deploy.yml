@@ -13,5 +13,5 @@ jobs:
         with:
           python-version: "3.x"
       - run: pip install mkdocs-material mkdocs-awesome-nav mkdocs-exporter beautifulsoup4
-      - run: playwright install chrome --with-deps
+      - run: playwright install chromium --with-deps
       - run: mkdocs gh-deploy --force --strict

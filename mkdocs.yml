@@ -28,7 +28,11 @@ theme:
     primary: custom
     accent: custom
   features:
-    - navigation.tabs
+    # Sin navigation.tabs, el menú principal deja de estar en pestañas arriba y
+    # pasa a la barra lateral izquierda. Tampoco se activa navigation.sections:
+    # así todas las secciones son desplegables por igual (incluida "Políticas",
+    # que al estar anidada quedaría como el único desplegable entre grupos
+    # fijos) y solo se abre la sección de la página que se está leyendo.
     - navigation.top
     - search.suggest
     - content.action.edit   # añade un lápiz "Editar esta página" que lleva directo al editor de GitHub
