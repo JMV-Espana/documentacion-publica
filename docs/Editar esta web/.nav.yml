@@ -1,0 +1,9 @@
+# Orden de lectura, de menos a más: primero entender el sistema, luego la cuenta,
+# luego editar, y la chuleta de Markdown al final como referencia de consulta.
+nav:
+  - index.md
+  - crear-cuenta-github.md
+  - editar-una-pagina.md
+  - crear-una-pagina.md
+  - subir-imagenes.md
+  - markdown-basico.md
