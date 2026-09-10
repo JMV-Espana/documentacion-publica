@@ -17,7 +17,7 @@ Se te pedirá cambiar la contraseña a una nueva inmediatamente.
 
     - Migra tu antiguo Drive a la nube corporativa: base de datos de centro, documentos oficiales, tesorería, activiades, catequesis...
 
-    Encuentra como en esta guía: [Migrar tu antigua nube al nuevo Drive](migrar-nube.md)
+    Encuentra como en esta guía: [Migrar tu antigua nube sin descargar nada](migrar-nube-sin-descargas.md)
 
 !!! warning "Qué hacer cuando cambiamos de presidente"
 

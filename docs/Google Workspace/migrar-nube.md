@@ -1,46 +1,83 @@
-# Migra tu antigua nube al nuevo Drive
-!!! danger "Importante"
-    En el nuevo Drive, almacenaremos datos sensibles en una unidad aparte.
+# Archivos que no se pudieron mover
 
-    Por favor, consulta la política de Unidades Compartidas: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
+!!! info "Esta guía es el remate de otra"
+    Si has llegado aquí directamente, empieza por
+    [Migra tu antigua nube sin descargar nada](migrar-nube-sin-descargas.md):
+    con ella se mueve de una vez todo tu Drive antiguo a la unidad compartida
+    del centro, sin descargar nada.
 
-1. Crea una carpeta en tu antiguo Drive con el nombre “Archivos antiguos”.
+    Esta página es solo para el resto: los pocos archivos que Drive no ha
+    podido mover y que te ha listado en un `.csv` al terminar.
 
-![e1ca4761-23d2-4cb1-b22a-57655388c5ae.png](../assets/img/migrar-nube/01.png)
+Drive no puede cambiar el propietario de un archivo que pertenece a otra
+persona, aunque lo tengas en tu Drive desde hace años. Por eso esos archivos se
+quedan atrás, y por eso hay que traerlos de otra manera.
+
+Abre la lista `.csv` con Hojas de cálculo de Google y mira cuántos son. Lo
+normal es que sean unos pocos, y que ni siquiera te interesen todos: cosas que
+alguien te compartió en su día y que no forman parte de la documentación del
+centro. Migra solo lo que de verdad necesita el centro.
+
+## Opción A: pedírselo a su dueño
+
+Es la más limpia, y la única que conserva el archivo tal cual, con sus
+comentarios y su historial.
+
+Escribe a la persona propietaria y pídele que suba ella misma el documento a la
+unidad compartida de vuestro centro, o que te lo comparta como **Editor** para
+que puedas copiarlo. Si es alguien del centro que ya tiene cuenta
+`@jmvesp.org`, mejor todavía: que lo mueva directamente a la unidad compartida.
+
+## Opción B: copiarlo desde la cuenta corporativa
+
+Sirve cuando el documento es un Documento, una Hoja o una Presentación de
+Google, y tienes acceso a él.
+
+1. Inicia sesión con tu **cuenta corporativa `@jmvesp.org`**.
+2. Abre el archivo (el enlace está en la lista `.csv`).
+3. Menú **Archivo** → **Hacer una copia**, y guárdala dentro de la unidad
+   compartida de tu centro.
+
+La copia es tuya desde el primer momento y sigue siendo un documento de Google.
+Lo que se pierde son los comentarios y el historial de versiones; el contenido,
+no. Si el propietario ha desactivado la opción de copiar, pasa a la opción C.
+
+## Opción C: descargar y volver a subir
+
+El último recurso, y el único que obliga a pasar los archivos por tu ordenador.
+Va bien para PDF, fotos o documentos de Word y Excel.
+
+1. Desde tu **cuenta antigua**, selecciona esos archivos y descárgalos. Si son
+   varios, Drive te los dará en uno o varios `.zip`.
+
+![Opción de descarga en el menú de Drive](../assets/img/migrar-nube/05.png)
+
+2. Si se han descargado como `.zip`, descomprímelos: botón derecho sobre el
+   archivo → **Extraer aquí** (en Windows con WinRAR o con el propio
+   explorador; en Mac basta con hacer doble clic).
+
+![Menú para extraer un archivo comprimido](../assets/img/migrar-nube/06.png)
+
+3. Inicia sesión con tu **cuenta corporativa**, entra en la unidad compartida de
+   tu centro y arrastra ahí los archivos.
+
+![Subida de archivos a Drive](../assets/img/migrar-nube/07.png)
 
 <br>
 
-![1413d87f-6c1a-4f3d-84f6-78b629cce68e.png](../assets/img/migrar-nube/02.png)
+![Archivos ya subidos en la cuenta nueva](../assets/img/migrar-nube/08.png)
 
-<br>
+!!! warning "Ojo con los documentos de Google"
+    Al descargarlos, los Documentos, Hojas y Presentaciones de Google dejan de
+    ser documentos de Google: se convierten en `.docx` y `.xlsx`, y por el
+    camino se pierden los comentarios y el historial de versiones.
 
-2. Selecciona todos los ficheros de “Mi unidad” usando la tecla Ctrl +A (si haces click en la carpeta Archivos antiguos mientras tienes apretado la tecla Ctrl la deseleccionas) y muévelos a la nueva carpeta nueva.
-
-![e56be5dd-6c8f-4560-a325-9b611abe5986.png](../assets/img/migrar-nube/03.png)
-
-3. Repite el punto anterior hasta que solamente quede la carpeta Archivos Antiguos.
-
-![219c25b5-e53e-465f-bce0-f99590cc5587.png](../assets/img/migrar-nube/04.png)
-
-4. Una vez ya no quede ningún archivo por mover, descargamos la carpeta. Dependiendo de la cantidad de archivos que tengamos, este proceso puede tardar unos minutos. Puede que también se descarguen varios archivos .zip para dividir la descarga en paquetes más pequeños.
-
-   ![3a5c9136-5e82-40fe-863a-9681ecf9aa58.png](../assets/img/migrar-nube/05.png)
-5. Cuando se hayan descargado los ficheros, tendremos que ir a la carpeta donde se han descargado y seleccionarlos. Hacemos click con el botón derecho del ratón y seleccionamos la opción “WinRar” y “Extraer aquí”.
-6. ![f5a48a67-eab4-4927-a672-c6931e9c269c.png](../assets/img/migrar-nube/06.png)
-
-   Cuando haya finalizado el proceso, aparecerá la carpeta “Archivos antiguos” esa será la que tenemos que seleccionar para subir en la nueva cuenta.
-7. ![ed8535f2-5e8d-4d10-9c5a-b9bafc552c5a.png](../assets/img/migrar-nube/07.png)
-
-![31f154e9-5374-4e7d-83e4-0d4a66573112.png](../assets/img/migrar-nube/08.png)
-
-<br>
-
-!!! info "Opcional"
-
-    En la carpeta de “Compartido conmigo” en el Drive de vuestra cuenta original, podéis tener ficheros que os interese descargaros para guardarlos. Añadirlos a la carpeta descargada antes de subir esta carpeta a la nueva cuenta corporativa.
+    Para esos, usa la opción A o la B. Deja la descarga para los archivos que ya
+    eran archivos: PDF, fotos, vídeos, Word, Excel.
 
 !!! warning "Consulta la política sobre “Mi Unidad” y las Unidades Compartidas"
 
-    Toda la info aquí: [Unidades Comparitdas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
+    Toda la info aquí:
+    [Unidades compartidas: qué y para qué](../Corporativo/Políticas/unidades-compartidas.md)
 
 <br>
