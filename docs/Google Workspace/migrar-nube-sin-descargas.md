@@ -1,25 +1,13 @@
 # Migra tu antigua nube sin descargar nada
 
-Muchos centros nos habéis dicho lo mismo: descargar el Drive entero, pelearse
-con los `.zip` y volver a subirlo es lento y pesado.
-
-Hay una forma mucho mejor. Se apoya en cómo funcionan las **unidades
+Esta guía se apoya en cómo funcionan las **unidades
 compartidas**: lo que hay dentro de ellas no pertenece a ninguna persona, sino a
 la organización. Así que basta con **mover** tu carpeta antigua dentro de la
 unidad compartida de tu centro: en cuanto entra, la propiedad pasa a JMV España
 automáticamente.
 
-No se descarga nada, no se sube nada, se conserva la estructura de carpetas tal
+De esta forma, no hace falta descargar nada, no se sube nada, se conserva la estructura de carpetas tal
 cual está y los documentos de Google siguen siendo documentos de Google.
-
-!!! success "La clave: acceso de Administrador"
-
-    Tu cuenta antigua tiene que ser **Administrador** de la unidad compartida de
-    destino. Con acceso de Colaborador o de Gestor de contenido podrás mover
-    archivos sueltos, pero **no carpetas enteras**, que es justo lo que hace que
-    este método merezca la pena.
-
-    Es un permiso temporal: el último paso de esta guía es retirarlo.
 
 !!! info "Antes de empezar"
 
