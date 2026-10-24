@@ -69,9 +69,7 @@ Ahora, desde tu **cuenta corporativa `@jmvesp.org`**:
 4. En el desplegable de la derecha, elige **Administrador**.
 5. Pulsa **Enviar**.
 
-> 📸 **Falta captura:** el cuadro de "Gestionar miembros" con el correo antiguo
-> escrito y el desplegable abierto mostrando **Administrador**.
-> Guardar como `docs/assets/img/migrar-nube-sin-descargas/01.png`.
+> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/09.png)
 >
 > Al hacer estas capturas sobre un Drive real, **tapa antes de subirlas**
 > nombres de socios, correos personales y nombres de archivo con datos
@@ -97,13 +95,9 @@ izquierda, la sección **Unidades compartidas** con la unidad de tu centro.
 3. Drive te avisará de que **el propietario de los archivos va a cambiar** y de
    que la acción no se puede deshacer. Es exactamente lo que buscamos: acepta.
 
-> 📸 **Falta captura:** el selector de destino con la unidad compartida del
-> centro elegida.
-> Guardar como `docs/assets/img/migrar-nube-sin-descargas/02.png`.
+> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/11.png)
 
-> 📸 **Falta captura:** el aviso de Drive que advierte del cambio de propietario
-> antes de confirmar el movimiento.
-> Guardar como `docs/assets/img/migrar-nube-sin-descargas/03.png`.
+> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/12.png)
 
 !!! info "Con muchos archivos tarda un rato"
 
@@ -179,9 +173,7 @@ Después, desde la **cuenta corporativa**:
 2. Busca la dirección de la cuenta antigua.
 3. En su desplegable, elige **Quitar acceso**.
 
-> 📸 **Falta captura:** el desplegable de un miembro con la opción **Quitar
-> acceso** señalada.
-> Guardar como `docs/assets/img/migrar-nube-sin-descargas/05.png`.
+> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/13.png)
 
 Los archivos se quedan donde están: ya no son suyos. Lo único que desaparece es
 el acceso de una cuenta personal a la unidad de trabajo del centro, que es como
