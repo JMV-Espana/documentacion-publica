@@ -10,7 +10,7 @@ Para que no tengan ningún problema al contactarnos, debemos redirigir esos emai
 
 Aquí tienes los pasos para hacerlo desde una cuenta de Gmail personal (no institucional).
 
-1. Abre tu antigua cuenta de **Gmail personal** en un ordenador.
+1. Abre tu antigua cuenta de **Gmail de centro** en un ordenador.
 2. Haz clic en el icono de **Configuración** (la rueda dentada) en la esquina superior derecha y selecciona **Ver todos los ajustes**.
 
    ![Screenshot 2026-08-27 at 17.33.07.png](../assets/img/redirigir-gmail/01.png)
