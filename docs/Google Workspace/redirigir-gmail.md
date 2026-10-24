@@ -24,7 +24,7 @@ Aquí tienes los pasos para hacerlo desde una cuenta de Gmail personal (no insti
 
    ![imagen.png](../assets/img/redirigir-gmail/04.png)
 6. Ve a la bandeja de entrada de tu **correo corporativo** y busca el mensaje de confirmación de Google. Haz clic en el **vínculo de verificación** que contiene ese correo.
-7. Regresa a la pestaña de configuración en tu **Gmail personal**, actualiza el navegador y selecciona la opción **Reenviar una copia del correo entrante a...**.
+7. Regresa a la pestaña de configuración en tu **Gmail de centro**, actualiza el navegador y selecciona la opción **Reenviar una copia del correo entrante a...**.
 
    ![imagen.png](../assets/img/redirigir-gmail/05.png)
 8. Elige qué quieres hacer con el correo original. Te recomendamos "archivar la copia de Gmail".
