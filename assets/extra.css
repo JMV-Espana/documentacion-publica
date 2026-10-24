@@ -1,0 +1,519 @@
+/* Paleta de marca JMV España, a partir del logo (#188870) + acento dorado (#C9A227) */
+:root {
+  --md-primary-fg-color: #188870;
+  --md-primary-fg-color--light: #1BA187;
+  --md-primary-fg-color--dark: #146F5C;
+  --md-primary-bg-color: #FFFFFF;
+  --md-primary-bg-color--light: #FFFFFFB3;
+
+  --md-accent-fg-color: #C9A227;
+  --md-accent-fg-color--transparent: #C9A2271A;
+  --md-accent-bg-color: #FFFFFF;
+  --md-accent-bg-color--light: #FFFFFFB3;
+
+  --md-text-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --md-code-font: "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* Colores de los avisos (admonitions), a juego con la paleta de marca.
+     - success reutiliza el verde primario tal cual.
+     - warning reutiliza el dorado de acento, pero oscurecido: el dorado base
+       (--md-accent-fg-color) da solo 2.42:1 de contraste sobre blanco —
+       insuficiente incluso para el mínimo de 3:1 que pide WCAG para iconos —
+       así que aquí se usa un dorado más oscuro (4.63:1) en su lugar.
+     - info y danger no tienen equivalente en la paleta de marca, así que son
+       azul y rojo nuevos, elegidos con saturación/luminosidad similares a las
+       del verde y el dorado para que las cuatro etiquetas lean como un mismo
+       sistema en vez de cuatro colores sueltos. */
+  --md-admonition-success: var(--md-primary-fg-color);
+  --md-admonition-info: #1B6FA5;
+  --md-admonition-warning: #8F711D;
+  --md-admonition-danger: #C1443B;
+}
+
+.md-typeset .admonition.success,
+.md-typeset details.success {
+  border-color: var(--md-admonition-success);
+}
+.md-typeset .admonition.success:focus-within,
+.md-typeset details.success:focus-within {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--md-admonition-success) 10%, transparent);
+}
+.md-typeset .success > .admonition-title,
+.md-typeset .success > summary {
+  background-color: color-mix(in srgb, var(--md-admonition-success) 10%, transparent);
+}
+.md-typeset .success > .admonition-title::before,
+.md-typeset .success > summary::before {
+  background-color: var(--md-admonition-success);
+}
+
+.md-typeset .admonition.info,
+.md-typeset details.info {
+  border-color: var(--md-admonition-info);
+}
+.md-typeset .admonition.info:focus-within,
+.md-typeset details.info:focus-within {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--md-admonition-info) 10%, transparent);
+}
+.md-typeset .info > .admonition-title,
+.md-typeset .info > summary {
+  background-color: color-mix(in srgb, var(--md-admonition-info) 10%, transparent);
+}
+.md-typeset .info > .admonition-title::before,
+.md-typeset .info > summary::before {
+  background-color: var(--md-admonition-info);
+}
+
+.md-typeset .admonition.warning,
+.md-typeset details.warning {
+  border-color: var(--md-admonition-warning);
+}
+.md-typeset .admonition.warning:focus-within,
+.md-typeset details.warning:focus-within {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--md-admonition-warning) 10%, transparent);
+}
+.md-typeset .warning > .admonition-title,
+.md-typeset .warning > summary {
+  background-color: color-mix(in srgb, var(--md-admonition-warning) 10%, transparent);
+}
+.md-typeset .warning > .admonition-title::before,
+.md-typeset .warning > summary::before {
+  background-color: var(--md-admonition-warning);
+}
+
+.md-typeset .admonition.danger,
+.md-typeset details.danger {
+  border-color: var(--md-admonition-danger);
+}
+.md-typeset .admonition.danger:focus-within,
+.md-typeset details.danger:focus-within {
+  box-shadow: 0 0 0 0.2rem color-mix(in srgb, var(--md-admonition-danger) 10%, transparent);
+}
+.md-typeset .danger > .admonition-title,
+.md-typeset .danger > summary {
+  background-color: color-mix(in srgb, var(--md-admonition-danger) 10%, transparent);
+}
+.md-typeset .danger > .admonition-title::before,
+.md-typeset .danger > summary::before {
+  background-color: var(--md-admonition-danger);
+}
+
+/* Helvetica Neue no se puede cargar como web font libre (es de pago/propietaria
+   de Apple): se usa la copia ya instalada en el sistema del visitante (viene de
+   serie en macOS/iOS) y se cae a Helvetica/Arial en el resto. */
+body,
+input {
+  font-family: var(--md-text-font);
+}
+
+.md-typeset h1,
+.md-typeset h2,
+.md-typeset h3,
+.md-typeset h4,
+.md-typeset h5,
+.md-typeset h6,
+.md-header__title,
+.md-nav__title {
+  font-family: "Helvetica Neue Bold", var(--md-text-font);
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   Marca de agua del fondo
+   ---------------------------------------------------------------------------
+   El logo, anclado abajo a la derecha y recortado por ambos bordes, para que
+   el fondo no sea un blanco liso.
+
+   Va como background-image del body y no como pseudo-elemento a propósito: un
+   ::before obligaría a pelearse con el apilamiento, porque con z-index 0 se
+   pintaría por encima del texto y con -1 quedaría detrás del fondo blanco del
+   propio body, invisible. Un background se pinta detrás del contenido sin
+   necesidad de tocar z-index.
+
+   Por eso el SVG (logo-marca-agua.svg) ya viene teñido: a una imagen de fondo no
+   se le puede aplicar opacity. Es el mismo trazado que logo.svg con el verde de
+   marca rebajado al 8% sobre blanco (#EDF6F4). Para hacerla más o menos visible,
+   basta con cambiar ese relleno en el SVG.
+
+   attachment:fixed la deja quieta al hacer scroll, como un papel timbrado.    */
+body {
+  background-image: url("logo-marca-agua.svg");
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  /* Desplazamientos negativos: así el logo se sale por abajo y por la derecha
+     en vez de verse entero flotando en una esquina. */
+  background-position: right -7rem bottom -7rem;
+  background-size: 30rem auto;
+}
+
+/* En pantallas estrechas hay que encogerla: a 30rem sobre un móvil de 390px la
+   marca ocupa casi toda la pantalla y deja de ser un fondo discreto. */
+@media screen and (max-width: 59.9375em) {
+  body {
+    background-position: right -3.5rem bottom -3.5rem;
+    background-size: 15rem auto;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Logotipo de la cabecera
+   ---------------------------------------------------------------------------
+   Material no fija la altura de la cabecera ni la expone como variable: sale
+   del propio contenido. El logo mide 1.2rem más 0.4rem de padding y 0.2rem de
+   margen por lado, lo que da los 2.4rem de alto de la barra. Al subir el logo a
+   1.8rem (un 50% más), la cabecera pasa sola a 3rem.                         */
+
+.md-header__button.md-logo img,
+.md-header__button.md-logo svg {
+  height: 1.8rem;
+}
+
+/* Las barras laterales se pegan con position:sticky a top:2.4rem, la altura
+   antigua de la cabecera; sin actualizarlo se meten 0.6rem por debajo de ella
+   al hacer scroll.
+
+   El ajuste va acotado a 76.25em (1220px) por dos motivos, y ambos importan:
+   - Material solo muestra el logo a partir de ese ancho (debajo lo sustituye por
+     el botón de menú), así que la cabecera únicamente mide 3rem por encima de
+     él; debajo sigue midiendo 2.4rem y el valor del tema es el correcto.
+   - Debajo de ese ancho la barra primaria no es una barra sino el cajón
+     desplegable, con position:fixed, top:0 y height:100%. Aplicarle este top la
+     bajaría 0.6rem sin recortarle el alto, dejando el final del menú fuera de
+     la pantalla. */
+@media screen and (min-width: 76.25em) {
+  .md-sidebar--primary,
+  .md-sidebar--secondary {
+    top: 3rem;
+  }
+}
+
+/* ---------------------------------------------------------------------------
+   Buscador destacado de la página de inicio
+   ---------------------------------------------------------------------------
+   No es un buscador aparte: es un <label> asociado al checkbox #__search que
+   Material ya usa para su propia búsqueda. Al pulsarlo se abre el buscador del
+   tema y se enfoca su campo. Así hay un único motor de búsqueda y un único
+   índice, en vez de duplicarlos.                                             */
+
+.jmv-buscador {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin: 1.4rem 0 0.8rem;
+  padding: 0.75rem 0.9rem;
+  border: 0.1rem solid var(--md-primary-fg-color--dark);
+  border-radius: 0.6rem;
+  color: var(--md-primary-fg-color--dark);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.jmv-buscador:hover {
+  background-color: color-mix(in srgb, var(--md-primary-fg-color--dark) 7%, transparent);
+}
+
+.jmv-buscador__icono {
+  flex: 0 0 auto;
+  width: 1.4em;
+  height: 1.4em;
+  fill: currentcolor;
+}
+
+.jmv-buscador__texto {
+  font-weight: 700;
+}
+
+/* ---------------------------------------------------------------------------
+   Bloque "¿Alguna duda?" del final de cada guía
+   ---------------------------------------------------------------------------
+   El marcado lo pone overrides/main.html. El botón imita a los de la cabecera
+   de la página (mismo verde, mismo radio, etiqueta en mayúsculas) para que se
+   lea como parte del mismo sistema.                                          */
+
+.jmv-dudas {
+  margin: 2.5rem 0 1rem;
+  padding-top: 1.2rem;
+  border-top: 0.05rem solid var(--md-default-fg-color--lightest);
+  text-align: center;
+}
+
+.jmv-dudas__boton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45em;
+  padding: 0.55em 1em;
+  border: 1px solid var(--md-primary-fg-color--dark);
+  border-radius: 0.5rem;
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.jmv-dudas__boton:hover {
+  background-color: var(--md-primary-fg-color);
+}
+
+.jmv-dudas__boton svg {
+  width: 1.2em;
+  height: 1.2em;
+  fill: currentcolor;
+  flex: 0 0 auto;
+}
+
+/* --- El diálogo --- */
+
+.jmv-dialogo {
+  width: min(32rem, calc(100vw - 1.6rem));
+  padding: 0;
+  border: none;
+  border-radius: 0.6rem;
+  box-shadow: 0 0.4rem 1.6rem #0000004d;
+  color: var(--md-default-fg-color);
+  background-color: var(--md-default-bg-color);
+}
+
+.jmv-dialogo::backdrop {
+  background-color: #00000066;
+}
+
+.jmv-dialogo__form {
+  padding: 1.2rem;
+}
+
+.jmv-dialogo__titulo {
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--md-primary-fg-color--dark);
+}
+
+.jmv-dialogo__intro {
+  margin: 0 0 1rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+
+.jmv-dialogo__grupo {
+  margin: 0 0 1rem;
+  padding: 0;
+  border: none;
+}
+
+.jmv-dialogo__grupo legend {
+  padding: 0;
+  margin-bottom: 0.4rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.jmv-dialogo__opcion {
+  display: flex;
+  gap: 0.5rem;
+  align-items: flex-start;
+  margin-bottom: 0.4rem;
+  padding: 0.5rem;
+  border: 0.05rem solid var(--md-default-fg-color--lightest);
+  border-radius: 0.4rem;
+  font-size: 0.68rem;
+  cursor: pointer;
+}
+
+.jmv-dialogo__opcion:hover {
+  border-color: var(--md-primary-fg-color--dark);
+}
+
+.jmv-dialogo__opcion small {
+  display: block;
+  margin-top: 0.1rem;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__campo {
+  display: block;
+  margin-bottom: 0.8rem;
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.jmv-dialogo__campo input,
+.jmv-dialogo__campo textarea {
+  display: block;
+  width: 100%;
+  margin-top: 0.25rem;
+  padding: 0.45rem 0.55rem;
+  border: 0.05rem solid var(--md-default-fg-color--lighter);
+  border-radius: 0.4rem;
+  font-family: inherit;
+  font-size: 0.7rem;
+  font-weight: 400;
+  color: inherit;
+  background-color: var(--md-default-bg-color);
+}
+
+.jmv-dialogo__campo input:focus,
+.jmv-dialogo__campo textarea:focus {
+  outline: 0.1rem solid var(--md-primary-fg-color--dark);
+  border-color: transparent;
+}
+
+.jmv-dialogo__aviso {
+  margin: 0 0 1rem;
+  font-size: 0.62rem;
+  line-height: 1.5;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__acciones {
+  display: flex;
+  gap: 0.5rem;
+  justify-content: flex-end;
+}
+
+.jmv-dialogo__cancelar,
+.jmv-dialogo__enviar {
+  padding: 0.5em 0.9em;
+  border-radius: 0.5rem;
+  font-family: inherit;
+  font-size: 0.66rem;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.jmv-dialogo__cancelar {
+  border: 1px solid var(--md-default-fg-color--lighter);
+  background-color: transparent;
+  color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__enviar {
+  border: 1px solid var(--md-primary-fg-color--dark);
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+}
+
+.jmv-dialogo__enviar:hover {
+  background-color: var(--md-primary-fg-color);
+}
+
+/* ---------------------------------------------------------------------------
+   Botones de acción de página: "EDITAR" y "DESCARGAR PDF"
+   ---------------------------------------------------------------------------
+   Por defecto, Material y mkdocs-exporter los pintan como un icono suelto sin
+   texto. Aquí se convierten en botones rectangulares con etiqueta visible.
+
+   Se usa el verde OSCURO (--md-primary-fg-color--dark), no el verde base: el
+   base da 4.38:1 sobre blanco y se queda por debajo del 4.5 que pide WCAG AA
+   para texto normal. El oscuro da 6.07:1. El dorado de acento (2.42:1) no se
+   usa para texto por ese mismo motivo.
+
+   La etiqueta se inyecta con ::before para que quede a la izquierda del icono.
+   El atributo title original se conserva, así que el nombre que anuncian los
+   lectores de pantalla no cambia.                                           */
+
+.md-content__button.md-icon {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4em;
+  padding: 0.4em 0.75em;
+  border: 1px solid var(--md-primary-fg-color--dark);
+  border-radius: 0.5rem;
+  font-size: 0.62rem;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  line-height: 1.35;
+  white-space: nowrap;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+/* Material dimensiona el SVG en rem; se reescala al tamaño del texto. */
+.md-content__button.md-icon svg {
+  width: 1.15em;
+  height: 1.15em;
+  margin: 0;
+  flex: 0 0 auto;
+}
+
+/* Descargar PDF: acción principal, relleno sólido. */
+.md-content__button.md-icon[download],
+.md-content__button.md-icon.jmv-pdf-oficial {
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+}
+
+.md-content__button.md-icon[download]:hover,
+.md-content__button.md-icon.jmv-pdf-oficial:hover {
+  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-bg-color);
+}
+
+/* Editar: acción secundaria, solo contorno; se rellena al pasar por encima. */
+.md-content__button.md-icon[rel="edit"] {
+  background-color: transparent;
+  color: var(--md-primary-fg-color--dark);
+}
+
+.md-content__button.md-icon[rel="edit"]:hover {
+  background-color: var(--md-primary-fg-color--dark);
+  color: var(--md-primary-bg-color);
+}
+
+/* Etiquetas de texto, a la izquierda del icono. */
+.md-content__button.md-icon[rel="edit"]::before {
+  content: "EDITAR";
+}
+
+.md-content__button.md-icon[download]::before,
+.md-content__button.md-icon.jmv-pdf-oficial::before {
+  content: "DESCARGAR PDF";
+}
+
+/* Fila de botones entre el título y el contenido, alineada a la izquierda.
+   El contenedor lo crea el hook hooks/mover_botones.py al construir el sitio;
+   aquí solo se le da forma. Se anula el float:right que Material aplica a los
+   botones, porque dentro de esta fila el orden lo lleva el flex. */
+.jmv-page-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  /* Arriba: el <h1> aporta 40px de margen inferior, así que se recorta con
+     -1.2rem (24px) para dejar el hueco en 16px.
+     Abajo: 0.75rem = 15px. */
+  margin: -1.2rem 0 0.75rem;
+}
+
+/* El margen superior del bloque siguiente colapsaría con el inferior de la fila
+   y ganaría el mayor de los dos (20px en los avisos, 16px en los párrafos),
+   ignorando el valor de arriba. Anulándolo, el hueco lo fija solo la fila. */
+.md-typeset .jmv-page-actions + * {
+  margin-top: 0;
+}
+
+.jmv-page-actions .md-content__button.md-icon {
+  float: none;
+  margin: 0;
+}
+
+/* Los botones no tienen sentido dentro del PDF generado ni al imprimir. */
+@media print {
+  /* Se oculta la fila entera, no solo los botones: si el contenedor siguiera
+     siendo flex, dejaría su margen inferior como hueco en blanco en el PDF. */
+  .jmv-page-actions,
+  .md-content__button.md-icon,
+  /* Un buscador y un formulario en papel no sirven de nada. */
+  .jmv-buscador,
+  .jmv-dudas,
+  .jmv-dialogo {
+    display: none;
+  }
+
+  /* La marca de agua es background-attachment:fixed, así que al imprimir se
+     repetiría en todas y cada una de las páginas del PDF. */
+  body {
+    background-image: none;
+  }
+}
