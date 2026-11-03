@@ -9,7 +9,7 @@ buttons:
       # jmv-pdf-oficial le da en extra.css la etiqueta "DESCARGAR PDF" y el
       # mismo estilo que el botón automático de las demás páginas.
       class: md-content__button md-icon jmv-pdf-oficial
-      href: https://drive.google.com/uc?export=download&id=1Mwa0YvpTriA2HnlQwMrzf50V_9ZzoNeU
+      href: https://drive.google.com/uc?export=download&id=1c6DsR0JwGbzrVqCs2gTuYkXG7hBYBlAX
       target: _blank
 ---
 

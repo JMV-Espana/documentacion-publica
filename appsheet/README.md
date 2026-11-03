@@ -7,7 +7,7 @@ al equipo que corresponde:
 
 | Categoría que elige quien pregunta | Se avisa a |
 | --- | --- |
-| Técnica (correo, Drive, cuentas, esta web…) | `gestiones.grupo@jmvesp.org` |
+| Técnica (correo, Drive, cuentas, esta web…) | `webmasters@jmvesp.org` |
 | Administrativa (altas y bajas, certificados, trámites…) | `secretariado@jmvesp.org` |
 | Organización y consultas generales (estatutos, funcionamiento, actividades…) | `ecn@jmvesp.org` |
 
@@ -388,7 +388,7 @@ formulario tienen que coincidir con la columna `Categoria` de la hoja.
       cuenta de jmvesp.org: en ambos casos debe volver al momento el aviso de
       rechazo, y en el buzón de `no-reply@` no debe aparecer nada.
 - [ ] Enviar una duda de cada categoría y comprobar que el aviso llega a
-      `gestiones.grupo@`, `secretariado@` y `ecn@` respectivamente, y que en la
+      `webmasters@`, `secretariado@` y `ecn@` respectivamente, y que en la
       hoja aparece la fila con la página desde la que se envió.
 - [ ] En AppSheet, cada gestor ve solo las dudas de su categoría.
 - [ ] Contestar una duda enviada desde un @gmail.com y pulsar **Marcar como
@@ -405,7 +405,7 @@ formulario tienen que coincidir con la columna `Categoria` de la hoja.
 orden:
 
 1. **Enviados de la cuenta que implementó el script.** Si esa cuenta es miembro
-   del grupo destinatario (por ejemplo, `gestiones.grupo@`), Gmail no le pone
+   del grupo destinatario (por ejemplo, `webmasters@`), Gmail no le pone
    en la bandeja de entrada su propia copia: el correo solo aparece en
    *Enviados*. El resto de miembros sí lo reciben.
 2. **Apps Script → Ejecuciones** (icono de lista en el menú izquierdo). Cada
