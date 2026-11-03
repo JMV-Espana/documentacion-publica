@@ -277,6 +277,14 @@ body {
   background-color: var(--md-default-bg-color);
 }
 
+/* El diálogo es el último hijo del artículo y Material le quita el margen
+   inferior (.md-content__inner > :last-child), lo que anula el centrado
+   vertical del navegador y lo deja pegado abajo. El selector tiene que pesar lo
+   mismo que el de Material para ganarle. */
+.md-content__inner > .jmv-dialogo {
+  margin: auto;
+}
+
 .jmv-dialogo::backdrop {
   background-color: #00000066;
 }
@@ -388,11 +396,6 @@ body {
   display: none;
 }
 
-.jmv-dialogo__estado--ok {
-  color: var(--md-primary-fg-color--dark);
-  font-weight: 700;
-}
-
 .jmv-dialogo__estado--error {
   color: var(--md-typeset-color);
   padding: 0.5rem;
@@ -430,6 +433,26 @@ body {
 
 .jmv-dialogo__enviar:hover {
   background-color: var(--md-primary-fg-color);
+}
+
+/* Panel que sustituye al formulario tras enviar la duda. */
+.jmv-dialogo__hecho {
+  padding: 1.6rem 1.2rem 1.2rem;
+  text-align: center;
+}
+
+.jmv-dialogo__hecho > svg {
+  width: 2.6rem;
+  height: 2.6rem;
+  fill: var(--md-primary-fg-color--dark);
+}
+
+.jmv-dialogo__hecho .jmv-dialogo__titulo:focus {
+  outline: none;
+}
+
+.jmv-dialogo__hecho .jmv-dialogo__acciones {
+  justify-content: center;
 }
 
 .jmv-dialogo__enviar:disabled {

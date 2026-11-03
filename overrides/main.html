@@ -109,6 +109,18 @@
           <button class="jmv-dialogo__enviar" type="submit" id="jmv-enviar">Enviar</button>
         </div>
       </form>
+
+      {# Sustituye al formulario cuando la duda se ha enviado bien. El texto con
+         la referencia lo rellena extra.js con lo que devuelve el script. #}
+      <div class="jmv-dialogo__hecho" id="jmv-dudas-hecho" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 1 0 0 20 10 10 0 0 0 0-20m-2 15-5-5 1.41-1.41L10 14.17l7.59-7.59L19 8z"/></svg>
+        <h2 class="jmv-dialogo__titulo" id="jmv-dudas-hecho-titulo" tabindex="-1">¡Enviado, gracias!</h2>
+        <p class="jmv-dialogo__intro" id="jmv-dudas-hecho-texto"></p>
+        <div class="jmv-dialogo__acciones">
+          <button class="jmv-dialogo__enviar" type="button"
+                  onclick="this.closest('dialog').close()">Cerrar</button>
+        </div>
+      </div>
     </dialog>
   {% endif %}
 {% endblock %}

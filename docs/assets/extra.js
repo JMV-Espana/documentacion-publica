@@ -71,6 +71,35 @@ document.addEventListener("click", function (evento) {
     estado.className = "jmv-dialogo__estado" + (tipo ? " jmv-dialogo__estado--" + tipo : "");
   }
 
+  // Alterna entre el formulario y el panel de "¡Enviado, gracias!". El
+  // aria-labelledby del diálogo se cambia con ellos para que los lectores de
+  // pantalla anuncien el título que se ve.
+  function mostrarHecho(form, hecho) {
+    var dialogo = form.closest("dialog");
+    var panel = document.getElementById("jmv-dudas-hecho");
+    form.hidden = hecho;
+    panel.hidden = !hecho;
+    dialogo.setAttribute("aria-labelledby", hecho ? "jmv-dudas-hecho-titulo" : "jmv-dialogo-titulo");
+    if (hecho) {
+      document.getElementById("jmv-dudas-hecho-titulo").focus();
+    }
+  }
+
+  // Al cerrar tras un envío, el diálogo se deja listo para otra duda: se vacía
+  // la pregunta pero se conservan nombre y correo, por si la misma persona
+  // quiere preguntar otra cosa desde la misma página. "close" no burbujea, así
+  // que se escucha en la fase de captura.
+  document.addEventListener("close", function (evento) {
+    if (evento.target.id !== "jmv-dialogo-dudas" ||
+        document.getElementById("jmv-dudas-hecho").hidden) {
+      return;
+    }
+    var form = document.getElementById("jmv-form-dudas");
+    form.elements.pregunta.value = "";
+    mostrarEstado("");
+    mostrarHecho(form, false);
+  }, true);
+
   document.addEventListener("submit", function (evento) {
     var form = evento.target;
     if (form.id !== "jmv-form-dudas") {
@@ -96,13 +125,13 @@ document.addEventListener("click", function (evento) {
         if (!resultado.ok) {
           throw new Error(resultado.error || "error");
         }
-        // Se vacía la duda pero se conservan nombre y correo, por si la misma
-        // persona quiere preguntar otra cosa desde la misma página.
-        form.elements.pregunta.value = "";
-        mostrarEstado(
-          "¡Recibido! Te contestaremos a " + form.elements.correo.value + " lo antes posible.",
-          "ok"
-        );
+        // La referencia también va en el correo de confirmación; aquí se
+        // muestra por si ese correo tarda o acaba en spam.
+        document.getElementById("jmv-dudas-hecho-texto").textContent =
+          (resultado.referencia ? "Tu número de referencia es " + resultado.referencia + ". " : "") +
+          "Te hemos enviado una confirmación a " + form.elements.correo.value +
+          " y te contestaremos allí lo antes posible.";
+        mostrarHecho(form, true);
       })
       .catch(function () {
         mostrarEstado(
