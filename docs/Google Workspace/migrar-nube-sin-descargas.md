@@ -24,24 +24,24 @@ En tu **cuenta antigua**:
 
 1. Crea una carpeta en "Mi unidad" llamada **Archivos antiguos**.
 
-![Menú de Drive para crear una carpeta nueva](../assets/img/migrar-nube/01.png)
+    ![Botón Nuevo de Drive](../assets/img/migrar-nube/01.png)
 
-<br>
+    <br>
 
-![Cuadro para escribir el nombre de la carpeta](../assets/img/migrar-nube/02.png)
+    ![Menú Nuevo de Drive con la opción Nueva carpeta](../assets/img/migrar-nube/02.png)
 
-<br>
+    <br>
 
 2. Selecciona todos los ficheros de "Mi unidad" con **Ctrl + A** y arrástralos
    dentro de "Archivos antiguos". Si mantienes pulsado **Ctrl** y haces clic
    sobre "Archivos antiguos", la deseleccionas para no meter la carpeta dentro
    de sí misma.
 
-![Todos los archivos de Mi unidad seleccionados](../assets/img/migrar-nube/03.png)
+    ![Todos los archivos de Mi unidad seleccionados](../assets/img/migrar-nube/03.png)
 
 3. Repite hasta que en "Mi unidad" solo quede la carpeta **Archivos antiguos**.
 
-![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/04.png)
+    ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/04.png)
 
 !!! success "Aprovecha para hacer limpieza"
 
@@ -69,7 +69,7 @@ Ahora, desde tu **cuenta corporativa `@jmvesp.org`**:
 4. En el desplegable de la derecha, elige **Administrador**.
 5. Pulsa **Enviar**.
 
-> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/09.png)
+> ![Gestionar miembros de la unidad compartida con el rol Administrador](../assets/img/migrar-nube/09.png)
 >
 > Al hacer estas capturas sobre un Drive real, **tapa antes de subirlas**
 > nombres de socios, correos personales y nombres de archivo con datos
@@ -95,9 +95,9 @@ izquierda, la sección **Unidades compartidas** con la unidad de tu centro.
 3. Drive te avisará de que **el propietario de los archivos va a cambiar** y de
    que la acción no se puede deshacer. Es exactamente lo que buscamos: acepta.
 
-> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/11.png)
+> ![Ventana Mover con la opción Unidades compartidas](../assets/img/migrar-nube/11.png)
 
-> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/12.png)
+> ![Aviso de Drive antes de mover: el propietario de los elementos va a cambiar](../assets/img/migrar-nube/12.png)
 
 !!! info "Con muchos archivos tarda un rato"
 
@@ -173,7 +173,7 @@ Después, desde la **cuenta corporativa**:
 2. Busca la dirección de la cuenta antigua.
 3. En su desplegable, elige **Quitar acceso**.
 
-> ![Mi unidad con una única carpeta llamada Archivos antiguos](../assets/img/migrar-nube/13.png)
+> ![Gestionar miembros con la opción Quitar acceso](../assets/img/migrar-nube/13.png)
 
 Los archivos se quedan donde están: ya no son suyos. Lo único que desaparece es
 el acceso de una cuenta personal a la unidad de trabajo del centro, que es como

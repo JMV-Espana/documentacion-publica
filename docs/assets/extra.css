@@ -361,11 +361,43 @@ body {
   border-color: transparent;
 }
 
-.jmv-dialogo__aviso {
+/* Fuera de la vista y del orden de tabulación, pero no display:none: algunos
+   robots se saltan los campos con display:none precisamente para no caer. */
+.jmv-dialogo__trampa {
+  position: absolute;
+  left: -9999px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+.jmv-dialogo__privacidad {
   margin: 0 0 1rem;
   font-size: 0.62rem;
   line-height: 1.5;
   color: var(--md-default-fg-color--light);
+}
+
+.jmv-dialogo__estado {
+  margin: 0 0 1rem;
+  font-size: 0.66rem;
+  line-height: 1.5;
+}
+
+.jmv-dialogo__estado:empty {
+  display: none;
+}
+
+.jmv-dialogo__estado--ok {
+  color: var(--md-primary-fg-color--dark);
+  font-weight: 700;
+}
+
+.jmv-dialogo__estado--error {
+  color: var(--md-typeset-color);
+  padding: 0.5rem;
+  border-left: 0.2rem solid #c62828;
+  background-color: #c628281a;
 }
 
 .jmv-dialogo__acciones {
@@ -398,6 +430,11 @@ body {
 
 .jmv-dialogo__enviar:hover {
   background-color: var(--md-primary-fg-color);
+}
+
+.jmv-dialogo__enviar:disabled {
+  opacity: 0.6;
+  cursor: wait;
 }
 
 /* ---------------------------------------------------------------------------

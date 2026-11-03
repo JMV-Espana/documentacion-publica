@@ -50,22 +50,22 @@ Va bien para PDF, fotos o documentos de Word y Excel.
 1. Desde tu **cuenta antigua**, selecciona esos archivos y descárgalos. Si son
    varios, Drive te los dará en uno o varios `.zip`.
 
-![Opción de descarga en el menú de Drive](../assets/img/migrar-nube/05.png)
+    ![Archivos .zip descargados en la carpeta Descargas](../assets/img/migrar-nube/05.png)
 
 2. Si se han descargado como `.zip`, descomprímelos: botón derecho sobre el
    archivo → **Extraer aquí** (en Windows con WinRAR o con el propio
    explorador; en Mac basta con hacer doble clic).
 
-![Menú para extraer un archivo comprimido](../assets/img/migrar-nube/06.png)
+    ![Menú para extraer un archivo comprimido](../assets/img/migrar-nube/06.png)
 
 3. Inicia sesión con tu **cuenta corporativa**, entra en la unidad compartida de
    tu centro y arrastra ahí los archivos.
 
-![Subida de archivos a Drive](../assets/img/migrar-nube/07.png)
+    ![Menú Nuevo de Drive con la opción Subir carpeta](../assets/img/migrar-nube/07.png)
 
-<br>
+    <br>
 
-![Archivos ya subidos en la cuenta nueva](../assets/img/migrar-nube/08.png)
+    ![Selección de la carpeta descomprimida para subirla](../assets/img/migrar-nube/08.png)
 
 !!! warning "Ojo con los documentos de Google"
     Al descargarlos, los Documentos, Hojas y Presentaciones de Google dejan de

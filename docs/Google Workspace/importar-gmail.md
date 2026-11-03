@@ -11,7 +11,8 @@ Es posible que quieras conservar tu historial de correo de centro. ¡Aquí te ex
 3. Ve a la pestaña **Reenvío y correo POP/IMAP**.
 4. En la sección "Acceso POP", marca **Habilitar POP para todos los mensajes**.
 
-   ![imagen.png](../assets/img/importar-gmail/01.png)
+    ![Opción Habilitar POP para todos los mensajes marcada](../assets/img/importar-gmail/01.png)
+
 5. Abajo del todo, haz clic en **Guardar cambios**.
 
 ### 2. Iniciar la importación en el Gmail corporativo
@@ -19,11 +20,12 @@ Es posible que quieras conservar tu historial de correo de centro. ¡Aquí te ex
 1. Cierra sesión e inicia sesión en tu **nueva cuenta de correo corporativo**.
 2. Haz clic en el icono de **Configuración** (el engranaje) y selecciona **Ver toda la configuración**.
 
-   ![Screenshot 2026-08-27 at 17.33.07.png](../assets/img/importar-gmail/02.png)
+    ![Botón Ver todos los ajustes en los ajustes rápidos de Gmail](../assets/img/importar-gmail/02.png)
+
 3. Ve a la pestaña **Cuentas e importación**.
 4. Busca la sección "Importar correo y contactos" y haz clic en **Importar correo y contactos**.
 
-   ![Screenshot 2026-08-27 at 18.10.31.png](../assets/img/importar-gmail/03.png)
+    ![Enlace Importar correo y contactos en la pestaña Cuentas e importación](../assets/img/importar-gmail/03.png)
 
 ### 3. Conectar las cuentas
 
@@ -36,7 +38,8 @@ Es posible que quieras conservar tu historial de correo de centro. ¡Aquí te ex
 
 1. En la ventana de importación, elige qué información deseas traer. Puedes marcar las casillas de **Importar contactos**, **Importar correo** y **Importar correo nuevo de los próximos 30 días** (para no perder los mensajes que te sigan llegando a la cuenta vieja).
 
-   ![imagen.png](../assets/img/importar-gmail/04.png)
+    ![Opciones de importación con las tres casillas marcadas](../assets/img/importar-gmail/04.png)
+
 2. Haz clic en **Comenzar importación**.
 3. Verás un mensaje indicando que el proceso ha comenzado. Haz clic en **Aceptar**.
 

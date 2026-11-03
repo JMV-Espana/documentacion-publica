@@ -5,7 +5,11 @@
 
   Se hace sobrescribiendo el bloque "content" (que está dentro del <article>) en
   vez de con un hook, porque aquí el marcado es el mismo en todas las páginas y
-  Jinja ya tiene a mano el título para el asunto del correo.
+  Jinja ya tiene a mano el título para el asunto de la duda.
+
+  El formulario no necesita cuenta de JMV: lo recibe un Apps Script, que guarda
+  la duda en la hoja de cálculo que gestionan los equipos desde AppSheet y avisa
+  por correo al que corresponda (ver appsheet/README.md).
 
   Se omite en las portadas (index.md): la del sitio y las de sección son páginas
   de navegación, no guías, y la portada ya ofrece su propia vía de contacto.
@@ -24,60 +28,85 @@
     </section>
 
     <dialog class="jmv-dialogo" id="jmv-dialogo-dudas" aria-labelledby="jmv-dialogo-titulo">
-      <form class="jmv-dialogo__form" method="dialog">
+      <form class="jmv-dialogo__form" id="jmv-form-dudas"
+            action="{{ config.extra.dudas_endpoint }}" method="post">
         <h2 class="jmv-dialogo__titulo" id="jmv-dialogo-titulo">¿Alguna duda?</h2>
         <p class="jmv-dialogo__intro">
-          Rellena esto y se abrirá tu programa de correo con el mensaje ya
-          preparado. Solo tendrás que darle a enviar.
+          Cuéntanos qué necesitas y se lo haremos llegar al equipo que mejor
+          puede ayudarte. Te contestaremos al correo que nos dejes.
         </p>
 
+        {# Los value deben coincidir con la columna Categoria de la pestaña
+           Categorias de la hoja de dudas: el script rechaza cualquier otro. #}
         <fieldset class="jmv-dialogo__grupo">
           <legend>¿Sobre qué es tu duda?</legend>
 
           <label class="jmv-dialogo__opcion">
-            <input type="radio" name="jmv-destino" value="gestiones.grupo@jmvesp.org" checked>
+            <input type="radio" name="categoria" value="Técnica" required>
             <span>
-              <strong>Es una duda técnica</strong>
-              <small>El correo, el Drive, esta web… Escribe al Grupo de Gestiones.</small>
+              <strong>Técnica</strong>
+              <small>El correo, el Drive, las cuentas, esta web…</small>
             </span>
           </label>
 
           <label class="jmv-dialogo__opcion">
-            <input type="radio" name="jmv-destino" value="ecn@jmvesp.org">
+            <input type="radio" name="categoria" value="Administrativa">
             <span>
-              <strong>Es una duda para el ECN</strong>
-              <small>Socios, actividades, cuentas… Escribe al Equipo Coordinador Nacional.</small>
+              <strong>Administrativa</strong>
+              <small>Altas y bajas de socios, certificados, trámites…</small>
+            </span>
+          </label>
+
+          <label class="jmv-dialogo__opcion">
+            <input type="radio" name="categoria" value="Organización">
+            <span>
+              <strong>Organización y consultas generales</strong>
+              <small>Estatutos, funcionamiento, actividades, cualquier otra cosa…</small>
             </span>
           </label>
         </fieldset>
 
         <label class="jmv-dialogo__campo">
+          <span>Tu nombre</span>
+          <input type="text" name="nombre" maxlength="100" autocomplete="name" required>
+        </label>
+
+        <label class="jmv-dialogo__campo">
           <span>Tu correo electrónico</span>
-          <input type="email" id="jmv-remitente" placeholder="nombre@jmvesp.org" required>
+          <input type="email" name="correo" maxlength="200" autocomplete="email" required>
         </label>
 
         <label class="jmv-dialogo__campo">
           <span>Asunto</span>
-          <input type="text" id="jmv-asunto" value="Duda sobre {{ page.title }}">
+          <input type="text" name="asunto" maxlength="200" value="Duda sobre {{ page.title }}" required>
         </label>
 
         <label class="jmv-dialogo__campo">
           <span>Tu duda</span>
-          <textarea id="jmv-mensaje" rows="5" placeholder="Cuéntanos qué necesitas saber…"></textarea>
+          <textarea name="pregunta" rows="5" maxlength="5000" required
+                    placeholder="Cuéntanos qué necesitas saber…"></textarea>
         </label>
 
-        <p class="jmv-dialogo__aviso">
-          Si al pulsar no se abre nada, es que este dispositivo no tiene un
-          programa de correo configurado. En ese caso escribe directamente a
-          <strong class="jmv-dialogo__destino">gestiones.grupo@jmvesp.org</strong>.
+        {# Campo trampa contra el spam: oculto para las personas, pero los robots
+           que rellenan todos los campos lo rellenan también, y entonces el
+           script descarta el envío. #}
+        <label class="jmv-dialogo__trampa" aria-hidden="true">
+          No rellenes este campo
+          <input type="text" name="web" tabindex="-1" autocomplete="off">
+        </label>
+
+        <p class="jmv-dialogo__privacidad">
+          Usaremos tu nombre y tu correo solo para contestar a esta duda. Más
+          información en nuestra
+          <a href="{{ 'Corporativo/Políticas/proteccion-datos/' | url }}" target="_blank">política de protección de datos</a>.
         </p>
 
+        <p class="jmv-dialogo__estado" id="jmv-dudas-estado" role="status"></p>
+
         <div class="jmv-dialogo__acciones">
-          {# type="button": como submit dispararía la validación del correo
-             obligatorio y no dejaría cerrar sin rellenarlo. #}
           <button class="jmv-dialogo__cancelar" type="button"
-                  onclick="this.closest('dialog').close()">Cancelar</button>
-          <button class="jmv-dialogo__enviar" type="button" id="jmv-enviar">Abrir mi correo</button>
+                  onclick="this.closest('dialog').close()">Cerrar</button>
+          <button class="jmv-dialogo__enviar" type="submit" id="jmv-enviar">Enviar</button>
         </div>
       </form>
     </dialog>

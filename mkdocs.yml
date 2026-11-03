@@ -40,6 +40,14 @@ theme:
     - search.suggest
     - content.action.edit   # añade un lápiz "Editar esta página" que lleva directo al editor de GitHub
 
+# Dirección del Apps Script que recibe el formulario "¿Alguna duda?" del final de
+# cada guía (overrides/main.html), lo guarda en la hoja de cálculo de dudas y
+# avisa al equipo que corresponde. Cómo se monta: appsheet/README.md.
+extra:
+  # Sale de Apps Script → Implementar → Gestionar implementaciones → URL de la
+  # aplicación web. Es de la forma https://script.google.com/macros/s/<id>/exec.
+  dudas_endpoint: https://script.google.com/macros/s/AKfycbz7DFmhYTpaVekaGkZQjeIFIC1cQ51jatntiAcG0YhdM8m9KHkjgkL6HLwI2bv7IcqU/exec
+
 extra_css:
   - assets/extra.css
 

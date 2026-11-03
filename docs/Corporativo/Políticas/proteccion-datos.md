@@ -16,11 +16,11 @@ Para la gestión de una actividad, o de un servicio de centro, podemos dar acces
 
 Por ejemplo, para compartir la carpeta "Tesorería", simplemente tenemos que seleccionar la opción "Compartir" en el desplegable.
 
-![imagen.png](../../assets/img/proteccion-datos/01.png)
+![Menú de la carpeta Tesorería con la opción Compartir](../../assets/img/proteccion-datos/01.png)
 
 y compartirla con el tesorero de centro
 
-![imagen.png](../../assets/img/proteccion-datos/02.png)
+![Cuadro para añadir a la persona con la que se comparte la carpeta](../../assets/img/proteccion-datos/02.png)
 
 Además, en esta pestaña, verás una lista actualizada de quien puede acceder a esta carpeta.
 
